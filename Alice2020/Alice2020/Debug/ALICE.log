@@ -1,0 +1,1276 @@
+﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  sketch_zSpace_Robot_NACHI.cpp
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\gl2ps\AL_gl2psUtils.h(22,16): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\ALICE_DLL.h(787,14): warning C4251: 'Alice::importer::Line': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Alice::importer'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\ALICE_DLL.h(788,21): warning C4251: 'Alice::importer::fileToRead': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Alice::importer'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\ALICE_DLL.h(797,34): warning C4251: 'Alice::importer::node_edge_map': class 'std::multimap<int,int,std::less<int>,std::allocator<std::pair<const int,int>>>' needs to have dll-interface to be used by clients of class 'Alice::importer'
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\ALICE_DLL.h(797): message : see declaration of 'std::multimap<int,int,std::less<int>,std::allocator<std::pair<const int,int>>>'
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\ALICE_DLL.h(958,28): warning C4251: 'Alice::physics::n_s_map': class 'std::multimap<int,int,std::less<int>,std::allocator<std::pair<const int,int>>>' needs to have dll-interface to be used by clients of class 'Alice::physics'
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\ALICE_DLL.h(797): message : see declaration of 'std::multimap<int,int,std::less<int>,std::allocator<std::pair<const int,int>>>'
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\ALICE_DLL.h(1225,18): warning C4251: 'Alice::Slider::varName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Alice::Slider'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\ALICE_DLL.h(1295,18): warning C4251: 'Alice::Button::varName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Alice::Button'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\ALICE_DLL.h(1373,12): warning C4251: 'Alice::Vertex::clr': struct 'vec4' needs to have dll-interface to be used by clients of class 'Alice::Vertex'
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\ALICE_DLL.h(33): message : see declaration of 'vec4'
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(246,18): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(246,43): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(260,14): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(260,35): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(450,18): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(450,43): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(450,68): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(464,14): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(464,35): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(464,56): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(685,18): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(685,43): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(685,68): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(706,14): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(706,35): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(706,56): warning C4244: '=': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(1305,30): warning C4244: 'argument': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(1305,25): warning C4244: 'argument': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(1305,20): warning C4244: 'argument': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(1350,43): warning C4244: 'argument': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(1350,35): warning C4244: 'argument': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(1350,27): warning C4244: 'argument': conversion from 'const double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(1355,23): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(1356,23): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(1391,23): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(1392,23): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(1410,23): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(1411,23): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(1429,23): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\matrices\matrices.h(1430,23): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(193,16): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(349,40): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(710,18): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(767,18): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(773,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(867,18): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(878,19): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(883,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(919,18): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(951,18): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(826,15): warning C4101: 'normal': unreferenced local variable
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(827,17): warning C4101: 'fcentroid': unreferenced local variable
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(888,19): warning C4101: 'cv': unreferenced local variable
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(974,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(979,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(984,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(1089,17): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(1090,17): warning C4101: 'v': unreferenced local variable
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(1151,16): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(1156,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(1160,19): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(1205,16): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\quickhull.h(1260,16): warning C4101: 'indices': unreferenced local variable
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(135,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(136,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(137,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(140,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(142,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(143,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(146,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(147,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(149,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(152,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(153,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(154,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(160,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(160,26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(160,22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(160,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(192,26): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(192,21): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(192,16): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(197,18): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(198,18): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(199,18): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(200,34): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(200,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(200,16): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(292,44): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(292,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(371,47): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(371,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(372,46): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(372,38): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(382,26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(382,21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(382,16): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(389,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(399,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(399,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(400,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(400,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(464,37): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(502,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(505,9): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(511,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(579,29): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(579,22): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(579,15): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(594,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(594,20): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(594,15): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(600,45): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(600,33): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(600,21): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(607,29): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(607,22): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(607,15): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(622,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(622,20): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(622,15): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(629,45): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(629,33): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(629,21): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(638,29): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(638,22): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(638,15): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(659,29): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(659,22): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(659,15): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(691,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(692,38): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(694,70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(882,30): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(882,24): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(882,18): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(975,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(980,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(1093,67): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(1093,57): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(1093,47): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(1112,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(1119,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(1155,25): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(1156,25): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(1157,25): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(1165,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\utilities.h(1168,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\MODEL.h(86,1): warning C4804: '>': unsafe use of type 'bool' in operation
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\MODEL.h(140,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\MODEL.h(140,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\CONTROLLER.h(34,1): warning C4804: '>': unsafe use of type 'bool' in operation
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\CONTROLLER.h(49,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\CONTROLLER.h(50,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\CONTROLLER.h(63,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\CONTROLLER.h(64,24): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\alice\CONTROLLER.h(103,1): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\main.h(252,26): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\main.h(391,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\main.h(391,30): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\main.h(396,25): error C2664: 'void glutReshapeFunc(void (__cdecl *)(int,int))': cannot convert argument 1 from 'void (__stdcall *)(int,int)' to 'void (__cdecl *)(int,int)'
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\main.h(396,18): message : None of the functions with this name in scope match the target type
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\freeglut\freeglut_std.h(469,26): message : see declaration of 'glutReshapeFunc'
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\main.h(399,19): error C2664: 'void glutIdleFunc(void (__cdecl *)(void))': cannot convert argument 1 from 'void (__stdcall *)(void)' to 'void (__cdecl *)(void)'
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\main.h(399,15): message : None of the functions with this name in scope match the target type
+C:\Users\FB\Documents\CODE\c++\Alice2020\ALICE\src\freeglut\freeglut_std.h(462,26): message : see declaration of 'glutIdleFunc'
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zMatrix.cpp(56,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zMatrix.cpp(97,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zMatrix.cpp(319,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zMatrix.cpp(678,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zVector.cpp(237,17): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zVector.cpp(264,34): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zVector.cpp(267,17): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zVector.cpp(285,17): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zVector.cpp(318,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zColor.cpp(91,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zColor.cpp(93,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zColor.cpp(123,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zColor.cpp(124,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zColor.cpp(125,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zDate.cpp(76,9): warning C4244: 'initializing': conversion from 'time_t' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zDate.cpp(90,17): warning C4244: 'initializing': conversion from 'time_t' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zDate.cpp(92,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zDate.cpp(141,31): warning C4244: 'return': conversion from 'double' to 'time_t', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zTransformationMatrix.cpp(84,45): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zTransformationMatrix.cpp(85,45): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zTransformationMatrix.cpp(86,45): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zTransformationMatrix.cpp(91,30): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zTransformationMatrix.cpp(92,30): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zTransformationMatrix.cpp(93,30): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zTransformationMatrix.cpp(110,41): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zTransformationMatrix.cpp(113,41): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zTransformationMatrix.cpp(116,41): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zTransformationMatrix.cpp(196,30): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zTransformationMatrix.cpp(197,30): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zTransformationMatrix.cpp(198,30): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zTransformationMatrix.cpp(493,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zTransformationMatrix.cpp(508,32): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zTransformationMatrix.cpp(513,37): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zQuaternion.cpp(29,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zQuaternion.cpp(29,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zQuaternion.cpp(29,15): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zQuaternion.cpp(74,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zQuaternion.cpp(79,48): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zQuaternion.cpp(79,59): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zQuaternion.cpp(84,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zQuaternion.cpp(104,8): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\base\zQuaternion.cpp(115,8): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(153,47): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(154,47): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(155,47): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(165,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(285,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(301,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(363,26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(363,22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(363,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(368,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(370,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(378,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(383,23): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(393,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(410,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(466,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(558,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(559,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(560,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(561,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(562,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(563,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(592,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(708,26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(726,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(728,37): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(731,26): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(743,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(744,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(745,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(854,34): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(855,34): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(892,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(893,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(894,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(896,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(904,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(905,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(906,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(922,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(943,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1044,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1065,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1067,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1081,118): warning C4244: '=': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=uint8_t
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1083,118): warning C4244: '=': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=uint8_t
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1085,118): warning C4244: '=': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=uint8_t
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1087,118): warning C4244: '=': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=uint8_t
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1109,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1147,71): warning C4244: '=': conversion from 'float' to 'unsigned char', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1149,75): warning C4244: '=': conversion from 'float' to 'unsigned char', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1151,75): warning C4244: '=': conversion from 'float' to 'unsigned char', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1179,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1201,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1203,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1211,90): warning C4244: '=': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=uint8_t
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1213,90): warning C4244: '=': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=uint8_t
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1215,90): warning C4244: '=': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=uint8_t
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1217,90): warning C4244: '=': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=uint8_t
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1307,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1313,27): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1317,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1333,16): warning C4244: '=': conversion from 'eT' to 'float', possible loss of data
+          with
+          [
+              eT=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1333,38): warning C4244: '=': conversion from 'eT' to 'float', possible loss of data
+          with
+          [
+              eT=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1333,59): warning C4244: '=': conversion from 'eT' to 'float', possible loss of data
+          with
+          [
+              eT=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1336,16): warning C4244: '=': conversion from 'eT' to 'float', possible loss of data
+          with
+          [
+              eT=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1336,38): warning C4244: '=': conversion from 'eT' to 'float', possible loss of data
+          with
+          [
+              eT=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1336,59): warning C4244: '=': conversion from 'eT' to 'float', possible loss of data
+          with
+          [
+              eT=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1339,16): warning C4244: '=': conversion from 'eT' to 'float', possible loss of data
+          with
+          [
+              eT=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1339,37): warning C4244: '=': conversion from 'eT' to 'float', possible loss of data
+          with
+          [
+              eT=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1339,58): warning C4244: '=': conversion from 'eT' to 'float', possible loss of data
+          with
+          [
+              eT=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1435,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1451,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1465,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1552,10): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1577,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1638,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1650,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1664,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1674,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1688,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsCore.cpp(1692,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\display\zObjBuffer.cpp(152,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\display\zObjBuffer.cpp(175,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsDisplay.cpp(50,15): warning C4244: 'argument': conversion from 'const double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsDisplay.cpp(66,20): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsDisplay.cpp(80,15): warning C4244: 'argument': conversion from 'const double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsDisplay.cpp(96,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsDisplay.cpp(105,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsDisplay.cpp(165,20): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsDisplay.cpp(193,20): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsDisplay.cpp(197,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\utilities\zUtilsDisplay.cpp(230,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zPointCloud.cpp(38,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(38,22): warning C4244: 'argument': conversion from 'double' to 'const unsigned int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(47,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(58,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(78,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(94,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(120,50): warning C4244: 'argument': conversion from 'double' to 'const unsigned int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(127,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(139,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(168,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(358,12): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(444,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(464,54): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(474,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(497,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(499,42): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(508,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(511,11): warning C4018: '>': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(538,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(560,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(572,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(574,42): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(583,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(588,11): warning C4018: '>': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(658,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(695,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(700,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zGraph.cpp(732,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\objects\zObjGraph.cpp(145,28): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\objects\zObjGraph.cpp(185,28): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zMesh.cpp(50,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zMesh.cpp(57,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zMesh.cpp(113,11): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zMesh.cpp(149,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zMesh.cpp(180,11): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zMesh.cpp(188,12): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zMesh.cpp(264,11): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zMesh.cpp(299,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zMesh.cpp(322,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zMesh.cpp(330,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zMesh.cpp(391,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zMesh.cpp(456,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zMesh.cpp(518,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zMesh.cpp(554,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zMesh.cpp(559,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zMesh.cpp(566,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zMesh.cpp(600,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\geometry\zMesh.cpp(629,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\objects\zObjMesh.cpp(222,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\objects\zObjMesh.cpp(255,28): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\objects\zObjMesh.cpp(293,28): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\objects\zObjMesh.cpp(330,28): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\objects\zObjMesh.cpp(351,33): warning C4018: '>': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\objects\zObjMesh.cpp(352,34): warning C4018: '>': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\objects\zObjMesh.cpp(374,46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\objects\zObjMesh.cpp(397,46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\headers\zCore\dynamics\zParticle.h(104,24): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\headers\zCore\dynamics\zParticle.h(105,24): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointCloud.cpp(41,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointCloud.cpp(82,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointCloud.cpp(97,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointCloud.cpp(107,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointCloud.cpp(305,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointCloud.cpp(306,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointCloud.cpp(307,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointCloud.cpp(342,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(40,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(315,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(317,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(359,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(521,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(588,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(771,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(891,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(909,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(929,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(962,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(963,21): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1004,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1032,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1061,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1080,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1111,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1140,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1171,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1202,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1214,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1240,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1280,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1300,22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1309,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1325,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1338,49): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1339,49): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1344,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1373,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1373,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1383,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1383,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1495,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1565,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1581,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1587,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1603,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMesh.cpp(1609,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(247,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(355,83): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(356,83): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(357,83): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(358,83): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(360,41): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(376,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(400,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(424,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(457,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(494,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(537,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(542,24): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(567,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(575,24): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(581,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(639,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(645,48): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(651,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(682,59): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(682,32): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(684,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(706,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(725,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(730,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(751,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(756,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(781,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(781,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(781,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(820,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(833,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(848,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(968,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(973,44): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(1129,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(1142,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(1166,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(1239,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(1278,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(1287,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(1335,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(1342,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(1354,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(1366,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(1433,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(1435,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(1582,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(1607,18): warning C4244: 'argument': conversion from 'double' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(1652,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(1773,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(2480,70): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(2480,83): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(2774,29): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(2795,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(2852,30): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(2886,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(2886,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(2896,22): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(2902,22): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(2907,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(2907,54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(2945,29): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(2963,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(2985,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(2990,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3000,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3065,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3070,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3287,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3347,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3440,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3441,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3442,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3456,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3457,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3458,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3470,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3485,34): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3555,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3556,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3557,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3677,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3679,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3685,122): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3685,85): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3685,48): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3688,129): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3688,92): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3688,55): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3691,125): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3691,88): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3691,51): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3716,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3721,119): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3721,84): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3721,49): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3735,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3737,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3742,119): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3742,84): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3742,49): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3745,119): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3745,84): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3745,49): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3753,119): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3753,84): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3753,49): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3770,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3933,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3933,40): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(3950,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(4158,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(4700,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(4716,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(4746,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(4765,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(4839,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(4846,53): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(4859,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(4871,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(4878,55): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(4887,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(4894,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(4901,53): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(4912,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(4932,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(4939,53): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMesh.cpp(4949,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItGraph.cpp(41,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItGraph.cpp(371,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItGraph.cpp(434,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItGraph.cpp(559,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItGraph.cpp(629,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItGraph.cpp(645,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItGraph.cpp(651,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItGraph.cpp(667,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItGraph.cpp(673,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(219,87): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(220,87): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(221,87): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(222,87): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(224,43): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(245,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(278,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(284,48): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(291,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(313,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(332,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(337,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(359,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(378,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(426,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(431,46): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(632,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(635,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(641,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(665,75): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(666,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(668,72): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(669,63): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(680,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(690,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(690,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(700,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(700,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(708,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(711,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(790,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(795,16): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(826,70): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(826,83): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1130,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1131,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1132,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1144,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1200,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1245,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1246,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1247,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1295,37): warning C4244: 'argument': conversion from 'double' to 'const unsigned int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1297,40): warning C4244: 'argument': conversion from 'double' to 'const unsigned int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1300,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1301,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1370,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1372,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1377,125): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1377,87): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1377,49): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1379,128): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1379,90): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1379,52): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1400,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1405,122): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1405,86): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1405,50): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1413,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraph.cpp(1516,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(40,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(49,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(50,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(54,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(79,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(128,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(163,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(214,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(255,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(326,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(383,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(392,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(393,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(397,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(422,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(471,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(506,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(557,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(598,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItMeshField.cpp(669,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(341,104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(341,74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(344,104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(344,74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(373,104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(373,74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(376,104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(376,74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(402,104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(402,74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(405,104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(405,74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(433,104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(433,74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(436,104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(436,74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(503,104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(503,74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(506,104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(506,74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(535,104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(535,74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(538,104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(538,74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(564,104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(564,74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(567,104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(567,74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(595,104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(595,74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(598,104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(598,74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(624,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(641,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(718,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(727,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(730,1): warning C4244: '+=': conversion from '_Ty' to 'zSpace::zScalar', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(734,1): warning C4244: '/=': conversion from 'double' to 'zSpace::zScalar', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(749,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(758,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(761,1): warning C4244: '+=': conversion from '_Ty' to 'zSpace::zScalar', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(766,1): warning C4244: '/=': conversion from 'double' to 'zSpace::zScalar', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(779,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(790,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(795,1): warning C4244: '+=': conversion from '_Ty' to 'zSpace::zScalar', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(800,1): warning C4244: '/=': conversion from 'double' to 'zSpace::zScalar', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(840,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(849,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(852,29): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(856,12): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(871,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(880,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(883,28): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(888,12): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(902,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(913,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(919,29): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(924,12): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(981,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1345,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1367,22): warning C4244: 'argument': conversion from 'double' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1391,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1403,22): warning C4244: 'argument': conversion from 'double' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1448,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1457,22): warning C4244: 'argument': conversion from 'double' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1496,22): warning C4244: 'argument': conversion from 'double' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1535,22): warning C4244: 'argument': conversion from 'double' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1575,22): warning C4244: 'argument': conversion from 'double' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1620,22): warning C4244: 'argument': conversion from 'double' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1667,22): warning C4244: 'argument': conversion from 'double' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1692,25): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1709,25): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1744,57): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1745,25): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1793,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1798,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1804,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1823,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1845,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1876,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1895,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1916,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1935,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1962,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1977,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(1992,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2081,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2088,37): warning C4244: 'argument': conversion from 'double' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2114,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2139,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2146,37): warning C4244: 'argument': conversion from 'double' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2224,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2244,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2374,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2376,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2388,85): warning C4244: '=': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=uint8_t
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2391,85): warning C4244: '=': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=uint8_t
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2394,85): warning C4244: '=': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=uint8_t
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2400,86): warning C4244: '=': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=uint8_t
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2412,83): warning C4244: '=': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=uint8_t
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2415,83): warning C4244: '=': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=uint8_t
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2418,83): warning C4244: '=': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=uint8_t
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2423,84): warning C4244: '=': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=uint8_t
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2452,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2454,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2460,16): warning C4244: 'argument': conversion from 'double' to 'zSpace::zScalar', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2595,40): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2793,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2808,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(2830,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(3308,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(3323,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(3352,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(3369,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(3409,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(3622,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(4159,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(4175,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(4205,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshField.cpp(4224,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(40,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(49,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(50,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(51,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(55,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(80,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(130,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(131,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(206,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(207,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(293,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(294,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(351,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(360,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(361,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(365,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(376,28): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(427,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(428,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(503,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(504,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(590,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\iterators\zItPointField.cpp(591,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(266,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(275,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(278,1): warning C4244: '+=': conversion from '_Ty' to 'zSpace::zScalar', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(282,1): warning C4244: '/=': conversion from 'double' to 'zSpace::zScalar', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(297,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(306,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(309,1): warning C4244: '+=': conversion from '_Ty' to 'zSpace::zScalar', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(314,1): warning C4244: '/=': conversion from 'double' to 'zSpace::zScalar', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(353,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(362,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(365,28): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(369,12): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(384,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(393,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(396,28): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(401,12): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(455,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(813,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(822,22): warning C4244: 'argument': conversion from 'double' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(861,22): warning C4244: 'argument': conversion from 'double' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(902,22): warning C4244: 'argument': conversion from 'double' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(948,22): warning C4244: 'argument': conversion from 'double' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(995,22): warning C4244: 'argument': conversion from 'double' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(1049,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(1054,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(1060,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(1079,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(1102,27): warning C4244: 'argument': conversion from 'double' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(1108,27): warning C4244: 'argument': conversion from 'double' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(1133,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(1152,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(1173,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(1192,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(1216,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(1231,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(1246,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnPointField.cpp(1327,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnParticle.cpp(166,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnParticle.cpp(176,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnParticle.cpp(176,66): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnParticle.cpp(179,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\headers\zInterface\functionsets\zFnMeshDynamics.h(129,37): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshDynamics.cpp(96,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshDynamics.cpp(114,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshDynamics.cpp(148,44): warning C4244: 'argument': conversion from 'const _Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshDynamics.cpp(150,21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshDynamics.cpp(181,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshDynamics.cpp(187,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnMeshDynamics.cpp(200,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\headers\zInterface\functionsets\zFnGraphDynamics.h(126,37): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraphDynamics.cpp(105,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraphDynamics.cpp(123,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraphDynamics.cpp(155,44): warning C4244: 'argument': conversion from 'const _Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraphDynamics.cpp(157,21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnGraphDynamics.cpp(173,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zCore\field\zBin.cpp(38,16): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\objects\zObjSpatialBin.cpp(80,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\objects\zObjSpatialBin.cpp(80,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\objects\zObjSpatialBin.cpp(80,21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\headers\zInterface\functionsets\zFnSpatialBin.h(277,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\headers\zInterface\functionsets\zFnSpatialBin.h(278,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\headers\zInterface\functionsets\zFnSpatialBin.h(279,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\headers\zInterface\functionsets\zFnSpatialBin.h(323,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\headers\zInterface\functionsets\zFnSpatialBin.h(324,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\headers\zInterface\functionsets\zFnSpatialBin.h(325,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\headers\zInterface\functionsets\zFnSpatialBin.h(369,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\headers\zInterface\functionsets\zFnSpatialBin.h(370,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\headers\zInterface\functionsets\zFnSpatialBin.h(371,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnSpatialBin.cpp(91,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnSpatialBin.cpp(92,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnSpatialBin.cpp(149,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnSpatialBin.cpp(150,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnSpatialBin.cpp(211,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnSpatialBin.cpp(212,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnSpatialBin.cpp(213,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnSpatialBin.cpp(223,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnSpatialBin.cpp(224,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnSpatialBin.cpp(225,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnSpatialBin.cpp(250,17): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnSpatialBin.cpp(272,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnSpatialBin.cpp(272,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zInterface\functionsets\zFnSpatialBin.cpp(272,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(43,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(44,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(45,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(46,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(48,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(49,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(50,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(51,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(54,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(55,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(56,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(104,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(354,89): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(538,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(687,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(688,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(689,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(692,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(693,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(694,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(697,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(698,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(699,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(703,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(704,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(705,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(778,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\ZSPACE\cpp\source\zToolsets\digiFab\zTsRobot.cpp(844,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(42,21): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(220,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(225,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(246,124): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(246,90): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(247,124): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(247,90): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(248,124): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(248,90): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(249,124): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(249,90): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(250,124): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(250,90): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(251,124): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(251,90): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(352,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(406,13): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(421,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(441,46): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(442,46): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(443,46): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(444,46): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(445,46): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\FB\Documents\CODE\Repos\CODE\C++\Robotics\sketch_zSpace_Robot_NACHI.cpp(446,46): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data

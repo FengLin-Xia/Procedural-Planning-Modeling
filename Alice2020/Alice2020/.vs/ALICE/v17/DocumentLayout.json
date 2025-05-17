@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Fenglin\\Desktop\\Alice2024\\Alice2020\\Alice2020\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{523591A1-85D6-4C6F-9283-4989B0011977}|ALICE.vcxproj|C:\\Users\\Fenglin\\Desktop\\Alice2024\\Alice2020\\Alice2020\\src\\userSrc\\sketch.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{523591A1-85D6-4C6F-9283-4989B0011977}|ALICE.vcxproj|solutionrelative:src\\userSrc\\sketch.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "sketch.cpp",
+              "DocumentMoniker": "C:\\Users\\Fenglin\\Desktop\\Alice2024\\Alice2020\\Alice2020\\src\\userSrc\\sketch.cpp",
+              "RelativeDocumentMoniker": "src\\userSrc\\sketch.cpp",
+              "ToolTip": "C:\\Users\\Fenglin\\Desktop\\Alice2024\\Alice2020\\Alice2020\\src\\userSrc\\sketch.cpp",
+              "RelativeToolTip": "src\\userSrc\\sketch.cpp",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowGUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-25T12:54:22.82Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

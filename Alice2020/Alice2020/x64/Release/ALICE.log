@@ -1,0 +1,7 @@
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  sketch.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1392,5): warning MSB8012: TargetPath(C:\Users\Fenglin\Desktop\Alice2024\Alice2020\Alice2020\x64\Release\ALICE.exe) does not match the Linker's OutputFile property value (C:\Users\Fenglin\Desktop\Alice2024\Alice2020\Alice2020\x64\Release\EXE\ALICE.exe). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
+  Generating code
+  Finished generating code
+  ALICE.vcxproj -> C:\Users\Fenglin\Desktop\Alice2024\Alice2020\Alice2020\x64\Release\ALICE.exe
