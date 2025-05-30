@@ -1,4 +1,4 @@
-﻿#define _MAIN_
+#define _MAIN_
 #ifdef _MAIN_
 
 #include "main.h"
@@ -6,7 +6,9 @@
 #include <headers/zApp/include/zViewer.h>
 #include <algorithm>
 #include <unordered_map>
-
+#include <fstream>
+#include <filesystem>
+#include <iomanip>
 #include <array>
 #include <vector>
 #include <random>
@@ -15,6 +17,10 @@
 #include <cmath>
 #include <cfloat>
 #include <set>
+//save
+#include <fstream>
+#include <filesystem>
+#include <iomanip>
 static std::mt19937 globalRng;
 using namespace zSpace;
 
@@ -23,6 +29,17 @@ using namespace zSpace;
 #define M_PI 3.14159265358979323846   // π 的双精度常量
 #endif
 
+#define CSV_PATH "C:/Users/24251/source/repos/ALICE_2020_2024/CSV/out.csv"// 自定义保存位置
+
+struct RGB { float r, g, b; };
+static constexpr RGB kColorRGB[] = {
+    {0.220f, 0.906f, 0.890f},   // BLUE
+    {0.557f, 0.000f, 0.000f},   // RED
+    {0.506f, 0.000f, 0.800f},   // PURPLE
+    {0.000f, 0.500f, 0.000f},   // GREEN
+    {1.000f, 0.839f, 0.200f},   // YELLOW
+    {0.980f, 0.325f, 0.024f}    // ORANGE
+};
 /* ───────── CONSTANTS ───────── */
 constexpr float mergeEPS = 5.0f;
 constexpr float connectRadius = 20.0f;
@@ -867,6 +884,51 @@ public:
         stage = 2;  // 恢复到“生长完毕”阶段
     }
 
+    void SavePoints() {
+        namespace fs = std::filesystem;
+
+        fs::path csvPath = CSV_PATH;                // 例如 "output/points.csv"
+        if (csvPath.has_parent_path())
+            fs::create_directories(csvPath.parent_path());  
+
+        std::ofstream out(csvPath, std::ios::trunc);
+        if (!out)
+        {
+            std::cerr << "[SavePoints] Failed to open " << csvPath << '\n';
+            return;
+        }
+
+        // 表头
+        out << "color,x,y,z\n";
+
+        const auto& pts = growth.getPoints();
+        for (const GPoint& gp : pts)
+        {
+            if (gp.active) 
+            {
+                std::cout<<"Still growing"<<std::endl;
+                break;
+            }
+
+            const RGB& c = kColorRGB[static_cast<size_t>(gp.col)];
+
+            // 1) 颜色列："{r,g,b}"，用双引号包裹以免逗号被拆列
+            out << '"'
+                << std::fixed << std::setprecision(3)
+                << c.r << ',' << c.g << ',' << c.b
+                << '"'
+                << ',';
+            // 写入一行：color,x,y（z 不需要）
+            out << std::fixed << std::setprecision(6)
+                << gp.pos.x << ','
+                << gp.pos.y << ','
+                << gp.pos.z <<'\n';
+        }
+
+        std::cout << "[SavePoints] Saved " << pts.size()
+            << " points to " << csvPath << '\n';
+    }
+
     void handleKey(unsigned char k, int x, int y) {
         switch (k) {
         case 'v': case 'V':
@@ -948,6 +1010,9 @@ public:
                 cmdLog += 's';
             }
             break;
+        case 'f': case 'F':
+            SavePoints();
+            break;
         case 'c': case 'C': {
             cmdLog += 'c';
 
@@ -1015,5 +1080,9 @@ void keyPress(unsigned char k, int x, int y) {
     scene.handleKey(k, x, y);
 }
 void mouseMotion(int, int) {}
+void Savepoints() {
+
+}
+
 
 #endif // _MAIN_
