@@ -6,9 +6,11 @@
 #include <headers/zApp/include/zViewer.h>
 #include <algorithm>
 #include <unordered_map>
-#include <fstream>
-#include <filesystem>
-#include <iomanip>
+#include <fstream>    // std::ifstream
+#include <sstream>    // std::stringstream
+#include <iostream>   // std::cerr, std::cout
+#include <utility>    // std::pair
+#include <filesystem> // C++17 的 std::filesystem::current_path()
 #include <array>
 #include <vector>
 #include <random>
@@ -17,10 +19,6 @@
 #include <cmath>
 #include <cfloat>
 #include <set>
-//save
-#include <fstream>
-#include <filesystem>
-#include <iomanip>
 static std::mt19937 globalRng;
 using namespace zSpace;
 
@@ -29,17 +27,6 @@ using namespace zSpace;
 #define M_PI 3.14159265358979323846   // π 的双精度常量
 #endif
 
-#define CSV_PATH "C:/Users/24251/source/repos/ALICE_2020_2024/CSV/out.csv"// 自定义保存位置
-
-struct RGB { float r, g, b; };
-static constexpr RGB kColorRGB[] = {
-    {0.220f, 0.906f, 0.890f},   // BLUE
-    {0.557f, 0.000f, 0.000f},   // RED
-    {0.506f, 0.000f, 0.800f},   // PURPLE
-    {0.000f, 0.500f, 0.000f},   // GREEN
-    {1.000f, 0.839f, 0.200f},   // YELLOW
-    {0.980f, 0.325f, 0.024f}    // ORANGE
-};
 /* ───────── CONSTANTS ───────── */
 constexpr float mergeEPS = 5.0f;
 constexpr float connectRadius = 20.0f;
@@ -48,7 +35,7 @@ constexpr float angEPSdeg = 15.0f;
 
 constexpr float sigma = 15.0f;   // 高斯核
 constexpr int   gridN = 120;     // 向量场分辨率
-zVector cpt{ -43.f, 12.f, 0.f };
+zVector cpt{ -48.f, -18.f, 0.f };
 /* ───────── HELPERS ───────── */
 namespace zSpace {
     inline zVector operator+(const zVector& a, const zVector& b) { return zVector(a.x + b.x, a.y + b.y, a.z + b.z); }
@@ -74,6 +61,131 @@ static void hsv2rgb(float h, float s, float v, float& r, float& g, float& b)
     }
 }
 
+
+std::vector<zVector> loadTerrainPoints(const std::string& filename, int stepX = 3, int stepY = 3)
+{
+    std::vector<zVector> pts;
+    std::ifstream in(filename);
+    if (!in.is_open()) {
+        std::cerr << "Cannot open " << filename << "\n";
+        return pts;
+    }
+
+    std::string line;
+    std::vector<std::vector<zVector>> rows; // 按y分组，每一排
+    float lastY = std::numeric_limits<float>::max();
+    std::vector<zVector> currentRow;
+
+    // 先逐行读取，按y分行
+    while (std::getline(in, line)) {
+        if (line.empty()) continue;
+        std::istringstream ss(line);
+        std::string xstr, ystr;
+        if (std::getline(ss, xstr, ',') && std::getline(ss, ystr, ',')) {
+            float x = std::stof(xstr);
+            float y = std::stof(ystr);
+
+            if (currentRow.empty() || std::fabs(y - lastY) < 1e-4) {
+                currentRow.emplace_back(x, y, 0.0f);
+                lastY = y;
+            }
+            else {
+                rows.push_back(currentRow); // 一行结束
+                currentRow.clear();
+                currentRow.emplace_back(x, y, 0.0f);
+                lastY = y;
+            }
+        }
+    }
+    if (!currentRow.empty()) rows.push_back(currentRow);
+
+    // 现在rows是所有行：每隔stepY行，每隔stepX个点采样
+    for (int rowIdx = 0; rowIdx < (int)rows.size(); rowIdx += stepY) {
+        const auto& row = rows[rowIdx];
+        for (int colIdx = 0; colIdx < (int)row.size(); colIdx += stepX) {
+            pts.push_back(row[colIdx]);
+        }
+    }
+
+    std::cout << "[Debug] Loaded sparse terrain points: " << pts.size() << std::endl;
+    return pts;
+}
+
+
+void rescaleToBox(std::vector<zVector>& pts, float boxHalfSize = 98.0f)
+{
+    if (pts.empty()) return;
+
+    zVector minPt = pts[0], maxPt = pts[0];
+    for (const auto& p : pts) {
+        minPt.x = std::min(minPt.x, p.x);
+        minPt.y = std::min(minPt.y, p.y);
+        minPt.z = std::min(minPt.z, p.z);
+        maxPt.x = std::max(maxPt.x, p.x);
+        maxPt.y = std::max(maxPt.y, p.y);
+        maxPt.z = std::max(maxPt.z, p.z);
+    }
+
+    zVector center = (minPt + maxPt) * 0.5f;
+    zVector size = maxPt - minPt;
+    float maxDim = std::max({ size.x, size.y, size.z });
+    float scale = (maxDim > 1e-6f) ? (boxHalfSize / (maxDim * 0.5f)) : 1.0f;
+
+    for (auto& p : pts) {
+        p = (p - center) * scale;
+    }
+}
+
+
+static void loadYellowLinesFromCSV(
+    const std::string& filename,
+    std::vector<std::pair<zSpace::zVector, zSpace::zVector>>& out)
+{
+    out.clear();
+    std::ifstream in(filename);
+    if (!in.is_open()) {
+        std::cerr << "Cannot open " << filename << "\n";
+        return;
+    }
+    std::string line;
+    std::vector<zSpace::zVector> current;
+    std::vector<std::vector<zSpace::zVector>> ridges;
+    while (std::getline(in, line)) {
+        if (line.empty()) {
+            if (current.size() >= 2) ridges.push_back(current);
+            current.clear();
+            continue;
+        }
+        std::stringstream ss(line);
+        float x, y, z; char comma;
+        ss >> x >> comma >> y >> comma >> z;
+        current.emplace_back(x, y, z);
+    }
+    if (current.size() >= 2) ridges.push_back(current);
+
+    // 在这里做 2.3 倍放大 + 整体 X 轴负方向平移 5
+    for (auto& ridge : ridges)
+    {
+        for (size_t i = 0; i + 1 < ridge.size(); ++i)
+        {
+            auto a = ridge[i];
+            auto b = ridge[i + 1];
+
+            // 缩放
+            a.x *= 2.3f;  a.y *= 2.3f;
+            b.x *= 2.3f;  b.y *= 2.3f;
+            // 平移 X 轴负方向 5
+            a.x -= 5.0f; a.y -= 5.0f;
+            b.x -= 5.0f; b.y -= 5.0f;
+
+            out.emplace_back(a, b);
+        }
+    }
+}
+
+
+
+
 /* ══════════════════════════════════════
    PART A  ——  样条网络 + 路网 / 向量场
    （与前版相同，这里直接给出实现）
@@ -94,32 +206,25 @@ public:
 
         // 1. 四个边界中点
         std::vector<zVector> borderCenters = {
-            zVector(0, -50, cpt.z),  // bottom
-            zVector(0, 50, cpt.z),   // top
-            zVector(-50, 0, cpt.z),  // left
-            zVector(50, 0, cpt.z)    // right
+            zVector(0, -100, cpt.z),  // bottom
+            zVector(0, 100, cpt.z),   // top
+            zVector(-100, 0, cpt.z),  // left
+            zVector(100, 0, cpt.z)    // right
         };
 
-        // 2. 排序并取最远的三个
-        std::sort(borderCenters.begin(), borderCenters.end(), [&](const zVector& a, const zVector& b) {
-            return lengthSquared(a - cpt) > lengthSquared(b - cpt);
-            });
+        // 2. 固定 seed1 为两个定值，直接构造 rays 和 seed1
+        rays.clear();
+        seed1.clear();
 
-        for (int i = 0; i < 2; ++i) {
-            zVector end = borderCenters[i];
-            rays.emplace_back(cpt, end);
+        // 第一个种子
+        seed1.emplace_back(65.0f, 8.0f, 0.0f);
+        rays.emplace_back(cpt, seed1[0]);
+        std::cout << "seed0 = (65, 25, 0)\n";
 
-            zVector dir = normalize(end - cpt);
-            zVector intersection = cpt + dir * 65.0f;
-            seed1.push_back(intersection);
-
-            std::cout
-                << "seed" << i
-                << " = ("
-                << intersection.x << ", "
-                << intersection.y << ", "
-                << intersection.z << ")\n";
-        }
+        // 第二个种子
+        seed1.emplace_back(-48.0f, 58.0f, 0.0f);
+        rays.emplace_back(cpt, seed1[1]);
+        std::cout << "seed1 = (-25, 25, 0)\n";
 
         // 3. 绘制圆（半径30）
         std::vector<zVector> circle;
@@ -178,8 +283,8 @@ public:
         int nLevels /*=40*/,
         float spacing /*=0.25f*/
     ) {
-        const float minX = -50.f, maxX = 50.f;
-        const float minY = -50.f, maxY = 50.f;
+        const float minX = -100.f, maxX = 100.f;
+        const float minY = -100.f, maxY = 100.f;
         const float dx = (maxX - minX) / float(gridRes - 1);
         const float dy = (maxY - minY) / float(gridRes - 1);
 
@@ -194,7 +299,7 @@ public:
             zVector vec = mid - seed0;
             theta0 = std::atan2(vec.y, vec.x);
         }
-        ellipses.push_back({ seed0, 18.f, 15.f, theta0 });
+        ellipses.push_back({ seed0, 10.f, 10.f, theta0 });
         // 四个固定中心点
         for (int i = 0; i < seed1.size(); ++i) {
             const zVector& pt = seed1[i];
@@ -204,7 +309,7 @@ public:
             float theta = std::atan2(dir.y, dir.x);  // 方向角（xy平面）
 
             // 添加椭圆，a=12长轴，b=6短轴，theta 为朝向方向
-            ellipses.push_back({ pt, 10.f, 18.f, theta });
+            ellipses.push_back({ pt, 10.f, 10.f, theta });
         }
 
         // 构建归一化半径场 D：对每个采样点，取到所有椭圆的最小归一化半径
@@ -283,236 +388,25 @@ public:
 
     }
 
-    void drawExtendedCurves(
-        const zVector& seed0,
-        const std::vector<zVector>& seed1,
-        const std::vector<std::pair<zVector, zVector>>& rays,
-        std::vector<std::pair<zVector, zVector>>& yellowLines, // ✅ 收集线段
-        int samples = 100)
-    {
-        const float minX = -50.f, maxX = 50.f;
-        const float minY = -50.f, maxY = 50.f;
 
-        auto inBox = [&](const zVector& pt) {
-            return pt.x >= minX && pt.x <= maxX && pt.y >= minY && pt.y <= maxY;
-            };
 
-        auto extendTangentLine = [&](const zVector& pt, float angle) {
-            zVector dir(std::cos(angle), std::sin(angle), 0);
-            zVector A = pt;
-            zVector B = pt + dir * 1000.f;
-
-            zVector clipped;
-            bool found = false;
-
-            auto intersect = [&](float ex, float ey, bool vertical) {
-                float u, ix, iy;
-                if (vertical)
-                    u = (ex - A.x) / (B.x - A.x), ix = ex, iy = A.y + (B.y - A.y) * u;
-                else
-                    u = (ey - A.y) / (B.y - A.y), iy = ey, ix = A.x + (B.x - A.x) * u;
-                if (u >= 0.f && u <= 1.f && ix >= minX && ix <= maxX && iy >= minY && iy <= maxY) {
-                    clipped = zVector(ix, iy, pt.z);
-                    found = true;
-                }
-                };
-
-            intersect(-50.f, 0.f, true);
-            intersect(50.f, 0.f, true);
-            intersect(0.f, -50.f, false);
-            intersect(0.f, 50.f, false);
-
-            if (found) {
-                glColor3f(1.0f, 1.0f, 1.0f);
-                drawLine(z2A(pt), z2A(clipped));
-                yellowLines.emplace_back(pt, clipped);  // ✅ 收集切线
-            }
-            };
-
-        auto drawHalfEllipse = [&](const zVector& center, float a, float b, float theta) -> std::vector<zVector> {
-            std::vector<zVector> arc;
-            for (int i = 0; i <= samples; ++i) {
-                float t = float(i) / samples;
-                float angle = -M_PI / 2.f + t * M_PI;
-                float x = a * std::cos(angle);
-                float y = b * std::sin(angle);
-                float xr = x * std::cos(theta) - y * std::sin(theta);
-                float yr = x * std::sin(theta) + y * std::cos(theta);
-                arc.emplace_back(center.x + xr, center.y + yr, center.z);
-            }
-
-            glColor3f(1.0f, 1.0f, 1.0f);
-            glBegin(GL_LINE_STRIP);
-            for (auto& pt : arc)
-                if (inBox(pt)) glVertex3f(pt.x, pt.y, pt.z);
-            glEnd();
-
-            for (size_t k = 0; k + 1 < arc.size(); ++k)
-                yellowLines.emplace_back(arc[k], arc[k + 1]);  // ✅ 收集椭圆段
-
-            return arc;
-            };
-
-        // 1. 大黄圆裁剪（保留画法）
-        for (int i = 0; i < seed1.size(); ++i) {
-            zVector dir = seed1[i] - rays[i].first;
-            float len = std::sqrt(dir.x * dir.x + dir.y * dir.y + dir.z * dir.z);
-            if (len < 1e-6f) continue;
-            dir = dir * (1.0f / len);
-            zVector center = seed1[i] + dir * 35.f;
-
-            std::vector<zVector> segment;
-            segment.reserve(samples + 1);
-            bool inSeg = false;
-            zVector prevPt;
-
-            for (int s = 0; s <= samples; ++s) {
-                float t = float(s) / samples;
-                float a = t * 2.0f * M_PI;
-                zVector pt{
-                    center.x + 55.f * std::cos(a),
-                    center.y + 55.f * std::sin(a),
-                    center.z
-                };
-
-                bool inBox = (pt.x >= -50.f && pt.x <= 50.f &&
-                    pt.y >= -50.f && pt.y <= 50.f);
-
-                if (inBox) {
-                    if (!inSeg && s > 0) {
-                        float u, ix, iy;
-                        auto testEdge = [&](float ex, float ey, bool vertical) {
-                            if (vertical)
-                                u = (ex - prevPt.x) / (pt.x - prevPt.x), ix = ex, iy = prevPt.y + (pt.y - prevPt.y) * u;
-                            else
-                                u = (ey - prevPt.y) / (pt.y - prevPt.y), iy = ey, ix = prevPt.x + (pt.x - prevPt.x) * u;
-                            return u >= 0.f && u <= 1.f &&
-                                ix >= -50.f && ix <= 50.f &&
-                                iy >= -50.f && iy <= 50.f;
-                            };
-                        if (testEdge(-50.f, 0, true) ||
-                            testEdge(50.f, 0, true) ||
-                            testEdge(0, -50.f, false) ||
-                            testEdge(0, 50.f, false))
-                            segment.emplace_back(ix, iy, center.z);
-                    }
-
-                    segment.push_back(pt);
-                    inSeg = true;
-                }
-                else if (inSeg) {
-                    float u, ix, iy;
-                    auto testEdge = [&](float ex, float ey, bool vertical) {
-                        if (vertical)
-                            u = (ex - prevPt.x) / (pt.x - prevPt.x), ix = ex, iy = prevPt.y + (pt.y - prevPt.y) * u;
-                        else
-                            u = (ey - prevPt.y) / (pt.y - prevPt.y), iy = ey, ix = prevPt.x + (pt.x - prevPt.x) * u;
-                        return u >= 0.f && u <= 1.f &&
-                            ix >= -50.f && ix <= 50.f &&
-                            iy >= -50.f && iy <= 50.f;
-                        };
-                    if (testEdge(-50.f, 0, true) ||
-                        testEdge(50.f, 0, true) ||
-                        testEdge(0, -50.f, false) ||
-                        testEdge(0, 50.f, false))
-                        segment.emplace_back(ix, iy, center.z);
-
-                    if (segment.size() >= 2) {
-                        glColor3f(1.0f, 1.0f, 1.0f);
-                        glBegin(GL_LINE_STRIP);
-                        for (auto& p : segment)
-                            glVertex3f(p.x, p.y, p.z);
-                        glEnd();
-
-                        for (size_t k = 0; k + 1 < segment.size(); ++k)
-                            yellowLines.emplace_back(segment[k], segment[k + 1]);  // ✅ 收集圆段
-                    }
-
-                    segment.clear();
-                    inSeg = false;
-                }
-
-                prevPt = pt;
-            }
-
-            if (inSeg && segment.size() >= 2) {
-                glColor3f(1.0f, 1.0f, 1.0f);
-                glBegin(GL_LINE_STRIP);
-                for (auto& p : segment)
-                    glVertex3f(p.x, p.y, p.z);
-                glEnd();
-
-                for (size_t k = 0; k + 1 < segment.size(); ++k)
-                    yellowLines.emplace_back(segment[k], segment[k + 1]);  // ✅ 收集圆段
-            }
-        }
-
-        // 2. seed0 半椭圆和两条切线
-        float theta = 0.f;
-        if (seed1.size() >= 2) {
-            zVector mid = (seed1[0] + seed1[1]) * 0.5f;
-            zVector vec = mid - seed0;
-            theta = std::atan2(vec.y, vec.x);
-        }
-
-        std::vector<zVector> arc = drawHalfEllipse(seed0, 26.5f, 23.f, theta);
-        if (arc.size() >= 2) {
-            float angleLeft = theta + M_PI;
-            float angleRight = theta + M_PI;
-            extendTangentLine(arc.front(), angleLeft);
-            extendTangentLine(arc.back(), angleRight);
-        }
-
-        // 3. seed0 → 最远边界延长线
-        std::vector<zVector> borderCenters = {
-            zVector(0, -50, seed0.z), zVector(0, 50, seed0.z),
-            zVector(-50, 0, seed0.z), zVector(50, 0, seed0.z)
-        };
-
-        int imax = 0;
-        float maxD2 = 0.0f;
-        for (int i = 0; i < borderCenters.size(); ++i) {
-            zVector d = borderCenters[i] - seed0;
-            float d2 = d.x * d.x + d.y * d.y;
-            if (d2 > maxD2) {
-                maxD2 = d2;
-                imax = i;
-            }
-        }
-
-        zVector dir = borderCenters[imax] - seed0;
-        float len = std::sqrt(dir.x * dir.x + dir.y * dir.y);
-        if (len > 1e-6f) {
-            dir = dir * (1.0f / len);
-            zVector A = seed0 - dir * 1000.f;
-            zVector B = seed0 + dir * 1000.f;
-
-            std::vector<zVector> clipPts;
-            auto intersect = [&](float ex, float ey, bool vertical) {
-                float u, ix, iy;
-                if (vertical)
-                    u = (ex - A.x) / (B.x - A.x), ix = ex, iy = A.y + (B.y - A.y) * u;
-                else
-                    u = (ey - A.y) / (B.y - A.y), iy = ey, ix = A.x + (B.x - A.x) * u;
-                if (u >= 0.f && u <= 1.f && ix >= minX && ix <= maxX && iy >= minY && iy <= maxY)
-                    clipPts.emplace_back(ix, iy, seed0.z);
-                };
-
-            intersect(-50.f, 0.f, true);
-            intersect(50.f, 0.f, true);
-            intersect(0.f, -50.f, false);
-            intersect(0.f, 50.f, false);
-
-            if (clipPts.size() == 2) {
-                glColor3f(1.0f, 1.0f, 1.0f);
-                drawLine(z2A(clipPts[0]), z2A(clipPts[1]));
-                yellowLines.emplace_back(clipPts[0], clipPts[1]);  // ✅ 收集主线
-            }
-        }
-    }
+    //—————————————————————————LINE —————————————————————————————//
+    //————————————————————————————————————————————————————————//
+    //————————————————————————————————————————————————————————//
+    //————————————————————————————————————————————————————————//
+    //————————————————————————————————————————————————————————//
+    //————————————————————————————————————————————————————————//
 
 
 
+
+
+    //—————————————————————————LINE —————————————————————————————//
+    //————————————————————————————————————————————————————————//
+    //————————————————————————————————————————————————————————//
+    //————————————————————————————————————————————————————————//
+    //————————————————————————————————————————————————————————//
+    //————————————————————————————————————————————————————————//
 
 
 
@@ -533,6 +427,161 @@ private:
     }
     static float dot(const zVector& a, const zVector& b) {
         return a.x * b.x + a.y * b.y + a.z * b.z;
+    }
+
+};
+
+
+
+/* ---------- PointCloudNet : Load & Draw Point Cloud as Curve ---------- */
+class PointCloudNet
+{
+public:
+    std::vector<zVector> points;  // Original loaded points
+    std::vector<zVector> curvePoints;  // Rescaled curve points
+    std::vector<std::pair<zVector, zVector>> segments;
+
+    // Load points from a file (format: x,y,z per line)
+    bool loadFromFile(const std::string& filename)
+    {
+        points.clear();
+        curvePoints.clear();
+
+        std::ifstream inFile(filename);
+        if (!inFile.is_open())
+        {
+            std::cerr << "Failed to open file: " << filename << std::endl;
+            return false;
+        }
+
+        std::string line;
+        while (std::getline(inFile, line))
+        {
+            std::istringstream iss(line);
+            std::string xStr, yStr, zStr;
+
+            // Split line by comma
+            if (std::getline(iss, xStr, ',') && std::getline(iss, yStr, ',') && std::getline(iss, zStr, ','))
+            {
+                float x = std::stof(xStr);
+                float y = std::stof(yStr);
+                float z = std::stof(zStr);
+                points.push_back(zVector(x, y, z));
+            }
+        }
+
+        std::cout << "Loaded " << points.size() << " points from " << filename << std::endl;
+
+        // Automatically compute bounding box + rescale
+        computeBoundingBoxAndRescale();
+
+        return true;
+    }
+
+    // Compute bounding box and rescale points to [-50,50] cube
+    void computeBoundingBoxAndRescale()
+    {
+        if (points.empty()) return;
+
+        // Compute bounding box
+        zVector minPt = points[0];
+        zVector maxPt = points[0];
+
+        for (const auto& pt : points)
+        {
+            minPt.x = std::min(minPt.x, pt.x);
+            minPt.y = std::min(minPt.y, pt.y);
+            minPt.z = std::min(minPt.z, pt.z);
+
+            maxPt.x = std::max(maxPt.x, pt.x);
+            maxPt.y = std::max(maxPt.y, pt.y);
+            maxPt.z = std::max(maxPt.z, pt.z);
+        }
+
+        // Print bounding box
+        std::cout << "Bounding box: min(" << minPt.x << ", " << minPt.y << ", " << minPt.z << ") "
+            << "max(" << maxPt.x << ", " << maxPt.y << ", " << maxPt.z << ")" << std::endl;
+
+        // Compute center and scale
+        zVector center = (minPt + maxPt) * 0.5f;
+        zVector size = maxPt - minPt;
+
+        // Determine max dimension to fit uniformly in [-50,50]
+        float maxDim = std::max({ size.x, size.y, size.z });
+        float targetHalfSize = 100.0f;
+        float scale = (maxDim > 1e-6f) ? (targetHalfSize / (maxDim * 0.5f)) : 1.0f;
+
+        std::cout << "Scaling factor: " << scale << std::endl;
+
+        // Rescale + center points
+        curvePoints.clear();
+        for (const auto& pt : points)
+        {
+            zVector shifted = pt - center;
+            zVector scaled = shifted * scale;
+            curvePoints.push_back(scaled);
+        }
+
+
+    }
+
+    // Draw the rescaled curve
+    void drawCurve() const
+    {
+        if (curvePoints.empty()) return;
+
+        glColor3f(0.2f, 0.7f, 0.2f);  // Green curve
+        glLineWidth(3.0f);
+        glBegin(GL_LINE_STRIP);
+        for (const auto& pt : curvePoints)
+        {
+            glVertex3f(pt.x, pt.y, pt.z);
+        }
+        glEnd();
+        glLineWidth(1.0f);
+    }
+
+    // Optional: Draw points as dots (rescaled points)
+    //void drawPoints() const
+    //{
+    //    if (curvePoints.empty()) return;
+
+    //    glColor3f(1.0f, 0.0f, 0.0f);  // Red points
+    //    glPointSize(5.0f);
+    //    glBegin(GL_POINTS);
+    //    for (const auto& pt : curvePoints)
+    //    {
+    //        glVertex3f(pt.x, pt.y, pt.z);
+    //    }
+    //    glEnd();
+    //    glPointSize(1.0f);
+    //}
+
+    void scaleFromTopLeftCorner(float scaleFactor = 0.869f)
+    {
+        zVector corner(-100.0f, 100.0f, 0.0f);
+
+        for (auto& pt : curvePoints)
+        {
+            zVector relative = pt - corner;
+            relative *= scaleFactor;
+            pt = corner + relative;
+        }
+
+
+        // 2. 重新生成 “segments”
+        segments.clear();
+        if (curvePoints.size() >= 2)
+        {
+            segments.reserve(curvePoints.size() - 1);
+            for (size_t i = 1; i < curvePoints.size(); ++i)
+            {
+                segments.emplace_back(curvePoints[i - 1], curvePoints[i]);
+            }
+        }
+
+
+        std::cout << "Scaled curvePoints from top-left corner by factor " << scaleFactor << std::endl;
     }
 
 };
@@ -697,9 +746,10 @@ public:
 
 #include "ColorGrowth.h"  // 定义 ColorType、GPoint
 
+   //#include "Road.h"
 
 
-   // ---------- EllipseExpansion.h ----------
+      // ---------- EllipseExpansion.h ----------
 
 #include "EllipseExpansion.h"
 
@@ -717,6 +767,8 @@ struct Snapshot {
 };
 
 class Scene {
+    PointCloudNet pointCloud;
+    std::vector<zVector> terrainPoints;
     // —— 新增成员 —— 
     uint32_t      currentSeed;   // 本次流程用的种子
     std::string   cmdLog;        // 按键历史
@@ -751,53 +803,97 @@ public:
     }
 
     void Scene::rebuild() {
+        // 1) 加载并缩放点云
+        pointCloud.loadFromFile("data/Land Border.txt");
+        pointCloud.scaleFromTopLeftCorner(0.896f);
+        terrainPoints = loadTerrainPoints("data/02_Terrain Points.txt");
+        rescaleToBox(terrainPoints, 100.0f);
+        // 2) 闭合折线，让它首尾相连成多边形
+        {
+            auto& segs = pointCloud.segments;
+            if (!segs.empty()) {
+                // 最后一条线段的终点连回第一条的起点
+                segs.emplace_back(segs.back().second, segs.front().first);
+            }
+        }
+
+        // 3) 传给 EllipseExpansion 和 ColorGrowth
+        ellipses.setPointSegments(pointCloud.segments);
+        growth.setBoundarySegments(pointCloud.segments);
+
+        // 4) 其它初始化——随机种子、模式开关
         globalRng.seed(currentSeed);
         showEllipseMode = false;
 
-        net.drawExtendedCurves(::cpt, net.seed1, net.rays, yellowLines);
+        loadYellowLinesFromCSV("data/smoothed_main_ridges.csv", yellowLines);
+        std::cerr << "[Debug] scene.yellowLines=" << yellowLines.size() << std::endl;
 
-        // 1) 重建网格、交点、边网络
+        // 5) 重建网格、交点
         net.build();
         marks.build(net);
 
-        yellowLines.clear();
-        // 2) 重置 growth，并添加初始种子
+        // 6) 重置 growth，并添加主种子
         growth.clear();
-        growth.setPlacementMode(ColorGrowth::PlacementMode::Contour
-        );
+        growth.setPlacementMode(ColorGrowth::PlacementMode::Contour);
         growth.addSeed(0, cpt);
 
-        // 3) （可选）把圆弧交点也塞进 ColorGrowth，如果你还要保留这部分逻辑
-        {
-            std::vector<zVector> circPts = net.computeCircleIntersections();
-            std::vector<Alice::vec> apts;
-            for (auto& z : circPts) apts.emplace_back(z.x, z.y, z.z);
-            growth.setCircleIntersectionPoints(apts);
+        for (auto& z : net.seed1) {
+            growth.addSeed(1, z);
         }
 
-        // 4) 清空并生成第1、3、5…条等高线到 net.contour0Lines
+        // 8) 生成等高线并注入 growth / ellipses
         net.contour0Lines.clear();
         net.contour1Lines.clear();
-        net.drawContourMap(cpt, marks.intPts, 120, 40, 0.25);
-
-        // 5) 把这些“0类”等高线线段传给 growth
+        net.drawContourMap(cpt, marks.intPts, 120, 40, 0.45);
         growth.setContour0Lines(net.contour0Lines);
         ellipses.setContour1Lines(net.contour1Lines);
 
-        // 6) 重置状态机阶段
+        // 9) 回到初始状态
         stage = 0;
     }
+
 
 
 
     void next() {
         if (showEllipseMode) return;
         stage = (stage + 1) % 3;
-        if (stage == 1)    for (auto& p : marks.merged) growth.addSeed(1, p);
+        if (stage == 1) {
+            // 只在进入 Stage 1 的时候，把硬写的 seed1 加进来
+            for (auto& z : net.seed1) {
+                growth.addSeed(1, z);
 
+            }
+
+        }
     }
 
+
     void draw() {
+
+        pointCloud.drawCurve();
+        // pointCloud.drawPoints();
+
+        glColor3f(0.15f, 0.22f, 0.6f);
+        glPointSize(4.0f);
+        glBegin(GL_POINTS);
+        for (auto& p : terrainPoints) {
+            if (!growth.pointInBoundary(p))   // 只画外部
+                glVertex3f(p.x, p.y, p.z);
+        }
+        glEnd();
+
+
+
+
+
+        // —— 一上来就画平滑主脊线段 —— 
+        glColor3f(1.0f, 1.0f, 1.0f);    // 黄色
+        glLineWidth(2.0f);
+        for (auto& seg : yellowLines) {
+            drawLine(z2A(seg.first), z2A(seg.second));
+        }
+        glLineWidth(1.0f);
 
         // —— T 模式优先：只画三角形 —— 
         if (showTriangleOnly) {
@@ -806,20 +902,24 @@ public:
         }
 
         if (showEllipseMode) {
-            // 1) 先画等高线
-           // net.drawContourMap(cpt, marks.intPts, 120, 40, 0.25f);
+            // 1) 先画等高线（如需要）
+            // net.drawContourMap(cpt, marks.intPts, 120, 40, 0.35f);
             // 2) 更新并画椭圆
             ellipses.update();
             ellipses.draw();
 
-            // 3) 最后画黄线
-            glColor3f(1.0f, 1.0f, 1.0f);  // 黄色
-            for (auto& seg : yellowLines) {
-                drawLine(z2A(seg.first), z2A(seg.second));
+            // 画每个椭圆的分区中心点
+            for (const auto& ep : ellipses.ellipses) {
+                for (const auto& c : ep.regionCenters) {
+                    glColor3f(1, 0, 0);
+                    drawCircle(z2A(c), 1.5f, 16);
+                }
             }
 
+            // 其它如有黄线逻辑按需
             return;
         }
+
         if (showField) {
             std::vector<zVector> src; std::vector<float> w;
             src.push_back(cpt); w.push_back(0.3f);
@@ -830,14 +930,19 @@ public:
             return;
         }
 
-
-
-
-        net.drawContourMap(cpt, marks.intPts, 120, 40, 0.25);
-        net.drawExtendedCurves(::cpt, net.seed1, net.rays, yellowLines);
+        // 普通模式下的其他绘制
+        net.drawContourMap(cpt, marks.intPts, 120, 40, 0.45);
         // net.drawCurves();
         // net.drawRays();
-        marks.draw();
+        if (stage == 1) {
+            // Stage 1：绘制我们手写的两个 seed1
+            net.drawSeeds();
+
+        }
+        else {
+            // 其它阶段不绘制 marks
+
+        }
 
         size_t before = prevGrowthCount;
         growth.update();
@@ -850,9 +955,7 @@ public:
         growth.draw();
 
         if (stage == 2) {
-
             std::vector<Alice::vec> ctr;
-
             growth.recolorNear(ctr, 1.0f);
         }
 
@@ -884,51 +987,6 @@ public:
         stage = 2;  // 恢复到“生长完毕”阶段
     }
 
-    void SavePoints() {
-        namespace fs = std::filesystem;
-
-        fs::path csvPath = CSV_PATH;                // 例如 "output/points.csv"
-        if (csvPath.has_parent_path())
-            fs::create_directories(csvPath.parent_path());  
-
-        std::ofstream out(csvPath, std::ios::trunc);
-        if (!out)
-        {
-            std::cerr << "[SavePoints] Failed to open " << csvPath << '\n';
-            return;
-        }
-
-        // 表头
-        out << "color,x,y,z\n";
-
-        const auto& pts = growth.getPoints();
-        for (const GPoint& gp : pts)
-        {
-            if (gp.active) 
-            {
-                std::cout<<"Still growing"<<std::endl;
-                break;
-            }
-
-            const RGB& c = kColorRGB[static_cast<size_t>(gp.col)];
-
-            // 1) 颜色列："{r,g,b}"，用双引号包裹以免逗号被拆列
-            out << '"'
-                << std::fixed << std::setprecision(3)
-                << c.r << ',' << c.g << ',' << c.b
-                << '"'
-                << ',';
-            // 写入一行：color,x,y（z 不需要）
-            out << std::fixed << std::setprecision(6)
-                << gp.pos.x << ','
-                << gp.pos.y << ','
-                << gp.pos.z <<'\n';
-        }
-
-        std::cout << "[SavePoints] Saved " << pts.size()
-            << " points to " << csvPath << '\n';
-    }
-
     void handleKey(unsigned char k, int x, int y) {
         switch (k) {
         case 'v': case 'V':
@@ -952,9 +1010,20 @@ public:
         case 'a': case 'A':
             if (showEllipseMode) {
                 ellipses.cornerSmooth(SMOOTH_PASSES);
+                // ellipses.splitAllEllipsesWithContourAndVector();
                 cmdLog += 'a';
             }
             break;
+        case 'w': case 'W':
+            if (showEllipseMode) {
+                // 只对小椭圆（circles）做一次三点平滑
+                ellipses.circleCornerSmooth(SMOOTH_PASSES);
+                cmdLog += 'w';
+                glutPostRedisplay();
+            }
+            break;
+
+
         case 't': case 'T':
 
             // 切换“仅三角形”开关
@@ -970,10 +1039,9 @@ public:
             showEllipseMode = true;
             cmdLog += 'z';
 
-            // 先把上一轮的黄线清空
-            yellowLines.clear();
-            // 只在进入椭圆模式时收集一次
-            net.drawExtendedCurves(cpt, net.seed1, net.rays, yellowLines);
+
+
+
 
             // 1) 构造样条线段列表
             std::vector<std::pair<zVector, zVector>> sl;
@@ -999,7 +1067,7 @@ public:
             );
 
             // 5) 设置等高线
-            net.drawContourMap(cpt, marks.intPts, 120, 40, 0.25f);
+            net.drawContourMap(cpt, marks.intPts, 120, 40, 0.45f);
             ellipses.setContour1Lines(net.contour1Lines);
             break;
         }
@@ -1010,21 +1078,10 @@ public:
                 cmdLog += 's';
             }
             break;
-        case 'f': case 'F':
-            SavePoints();
-            break;
         case 'c': case 'C': {
             cmdLog += 'c';
-
-            // 把 yellowLines（zVector 对）转成 GLine 数组
-            std::vector<GLine> yln;
-            yln.reserve(yellowLines.size());
-            for (auto& seg : yellowLines) {
-                yln.emplace_back(z2A(seg.first), z2A(seg.second));
-            }
-
-
-            growth.removeNearNetwork(yln, 1.5f);
+            growth.removeNearNetwork(yellowLines, 2.6f);
+            growth.removeNearNetwork(pointCloud.segments, 2.6f);
 
             recordSnapshot();
             break;
@@ -1034,17 +1091,28 @@ public:
             growth.removePointsNearPurple(6.0f);
             cmdLog += 'm';
             break;
-        case 'n': case 'N':
-            // 删除所有距紫色点半径 12 单位内的异色点
-            growth.removePointsNearYellow(4.0f);
-            cmdLog += 'n';
-            break;
+
         case 'o': case 'O':
             if (showEllipseMode) {
                 ellipses.toggleOffset();
                 cmdLog += 'o';
             }
             break;
+        case 'q': case 'Q': {
+            if (showEllipseMode) {
+                // 1) 把每个大椭圆按当前 boundary 切分，计算出 regionCenters
+                ellipses.splitAllEllipsesWithContourAndVector();
+
+                // 2) 根据 regionCenters 生成小圆检测种子，并开启扩散（内部会设置 deforming=true）
+                ellipses.initCircleSeeds();
+
+                // 3) （可选）记录日志、请求重绘
+                cmdLog += 'q';
+                glutPostRedisplay();
+            }
+            break;
+        }
+
         case '0':
             std::cout << "ReplaySeed=" << currentSeed << " cmds=" << cmdLog << std::endl;
             break;
@@ -1080,9 +1148,5 @@ void keyPress(unsigned char k, int x, int y) {
     scene.handleKey(k, x, y);
 }
 void mouseMotion(int, int) {}
-void Savepoints() {
-
-}
-
 
 #endif // _MAIN_
