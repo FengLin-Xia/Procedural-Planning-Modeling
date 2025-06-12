@@ -12,10 +12,10 @@
 
 using namespace zSpace;
 
-// ¡ª¡ª ÑÕÉ«Ã¶¾Ù ¡ª¡ª
+// â€”â€” é¢œè‰²æšä¸¾ â€”â€”
 enum ColorType { BLUE, RED, PURPLE, GREEN, YELLOW, ORANGE };
 
-// ¡ª¡ª Éú³¤µã½á¹¹ ¡ª¡ª
+// â€”â€” ç”Ÿé•¿ç‚¹ç»“æ„ â€”â€”
 struct GPoint {
     Alice::vec pos;
     ColorType col;
@@ -23,24 +23,49 @@ struct GPoint {
     GPoint(Alice::vec p, ColorType c) : pos(p), col(c), active(true) {}
 };
 
-// ¡ª¡ª Éú³¤Á¬Ïß½á¹¹ ¡ª¡ª
+// â€”â€” ç”Ÿé•¿è¿çº¿ç»“æ„ â€”â€”
 struct GLine {
     Alice::vec a, b;
     GLine(Alice::vec s, Alice::vec e) : a(s), b(e) {}
 };
 
-// ¡ª¡ª ColorGrowth Àà£¬Ö§³ÖËÄÖÖ·ÅÖÃÄ£Ê½ ¡ª¡ª
+// â€”â€” ColorGrowth ç±»ï¼Œæ”¯æŒå››ç§æ”¾ç½®æ¨¡å¼ â€”â€”
 class ColorGrowth {
     static constexpr int N_GROUPS = 3;
-
+    std::vector<std::pair<zVector, zVector>> boundarySegments;
 public:
-    // ·ÅÖÃÄ£Ê½
+
+
+
+    bool pointInBoundary(const zVector& P) const
+    {
+        bool inside = false;
+        for (auto& seg : boundarySegments)
+        {
+            const zVector& A = seg.first, & B = seg.second;
+            // æ°´å¹³å°„çº¿ä» P.x å‘ +âˆï¼Œä¸ AB çš„äº¤ç‚¹æµ‹è¯•
+            if (((A.y > P.y) != (B.y > P.y)) &&
+                (P.x < (B.x - A.x) * (P.y - A.y) / (B.y - A.y) + A.x))
+            {
+                inside = !inside;
+            }
+        }
+        return inside;
+    }
+
+
+
+    // æ”¾ç½®æ¨¡å¼
     enum class PlacementMode { ParentRadial, SquareGrid, HexGrid, Contour };
+   
 
-    // ÇĞ»»Ä£Ê½
+    // åˆ‡æ¢æ¨¡å¼
     void setPlacementMode(PlacementMode m) { mode = m; }
+    void setBoundarySegments(const std::vector<std::pair<zVector, zVector>>& segs) {
+        boundarySegments = segs;
+    }
 
-    // ÉèÖÃµÈ¸ßÏß£¬¹© Contour Ä£Ê½Ê¹ÓÃ
+    // è®¾ç½®ç­‰é«˜çº¿ï¼Œä¾› Contour æ¨¡å¼ä½¿ç”¨
     void setContour0Lines(const std::vector<std::vector<zVector>>& lines_) {
         contour0.clear();
         for (auto& ln : lines_) {
@@ -51,14 +76,14 @@ public:
         }
     }
 
-    // ÉèÖÃÔ²½»µã£¬¹©Ô²½»Ä£Ê½Ê¹ÓÃ
+    // è®¾ç½®åœ†äº¤ç‚¹ï¼Œä¾›åœ†äº¤æ¨¡å¼ä½¿ç”¨
     void setCircleIntersectionPoints(const std::vector<Alice::vec>& pts_) {
         circleIntersectionPoints = pts_;
         usedCirclePoint.assign(pts_.size(), false);
         nextCircleIndex = 0;
     }
 
-    // »Ö¸´£¯·ÃÎÊ×´Ì¬
+    // æ¢å¤ï¼è®¿é—®çŠ¶æ€
     const std::vector<GLine>& getLines() const { return lines; }
     const std::vector<GPoint>& getPoints() const { return pts; }
     void loadState(const std::vector<GPoint>& pts_, const std::vector<GLine>& lines_) {
@@ -66,7 +91,7 @@ public:
         lines = lines_;
     }
 
-    // ¹ÜÀíÖÖ×ÓºÍ¼ÆÊı
+    // ç®¡ç†ç§å­å’Œè®¡æ•°
     void clear() {
         for (auto& g : seedsGroups) g.clear();
         pts.clear();
@@ -82,7 +107,7 @@ public:
     void expandTo50() { maxCount = 150; }
     void expandFull() { maxCount = SIZE_MAX; }
 
-    // ¸¨Öúµ÷Õû
+    // è¾…åŠ©è°ƒæ•´
     void recolorNear(const std::vector<Alice::vec>& centers, float radius) {
         float r2 = radius * radius;
         for (auto& c : centers)
@@ -90,18 +115,16 @@ public:
                 if ((gp.pos.x - c.x) * (gp.pos.x - c.x) + (gp.pos.y - c.y) * (gp.pos.y - c.y) <= r2)
                     gp.col = BLUE;
     }
-    void removeNearNetwork(const std::vector<GLine>& lines_, float radius) {
+    void removeNearNetwork(const std::vector<std::pair<zVector, zVector>>& lines_, float radius) {
         float r2 = radius * radius;
         Alice::vec initial = seedsGroups[0].empty() ? Alice::vec(0, 0, 0) : seedsGroups[0][0];
-       
+
         for (int i = int(pts.size()) - 1; i >= 0; --i) {
             auto& gp = pts[i];
-            float dx0 = gp.pos.x - initial.x;
-            float dy0 = gp.pos.y - initial.y;
-           
             bool erase = false;
             for (auto& ln : lines_) {
-                Alice::vec a = ln.a, b = ln.b, p = gp.pos;
+                // è½¬æˆ Alice::vec ç”¨åŸæœ‰é€»è¾‘
+                Alice::vec a = z2A(ln.first), b = z2A(ln.second), p = gp.pos;
                 Alice::vec ab = b - a, ap = p - a;
                 float len2 = ab.x * ab.x + ab.y * ab.y;
                 if (len2 < 1e-6f) continue;
@@ -116,17 +139,18 @@ public:
     }
 
 
-    // ĞÂÔö£ºÉ¾³ıËùÓĞ¾àÈÎÒâ×ÏÉ«µã radius ·¶Î§ÄÚµÄ·Ç×ÏÉ«µã
+
+    // æ–°å¢ï¼šåˆ é™¤æ‰€æœ‰è·ä»»æ„ç´«è‰²ç‚¹ radius èŒƒå›´å†…çš„éç´«è‰²ç‚¹
     void removePointsNearPurple(float radius = 15.0f) {
         float r2 = radius * radius;
-        // ÊÕ¼¯ËùÓĞ×ÏÉ«µã
+        // æ”¶é›†æ‰€æœ‰ç´«è‰²ç‚¹
         std::vector<Alice::vec> purplePos;
         for (auto& gp : pts) {
             if (gp.col == PURPLE) {
                 purplePos.push_back(gp.pos);
             }
         }
-        // µ¹Ğò±éÀú£¬Óöµ½·Ç×ÏÉ«ÇÒÓëÈÎÒ»×ÏÉ«µã¾àÀëÆ½·½ ¡Ü r2 ÔòÉ¾³ı
+        // å€’åºéå†ï¼Œé‡åˆ°éç´«è‰²ä¸”ä¸ä»»ä¸€ç´«è‰²ç‚¹è·ç¦»å¹³æ–¹ â‰¤ r2 åˆ™åˆ é™¤
         for (int i = int(pts.size()) - 1; i >= 0; --i) {
             if (pts[i].col == PURPLE) continue;
             bool tooClose = false;
@@ -144,35 +168,9 @@ public:
             }
         }
     }
-    void removePointsNearYellow(float radius = 12.0f) {
-        float r2 = radius * radius;
-        // ÊÕ¼¯ËùÓĞ»ÆÉ«µã
-        std::vector<Alice::vec> yellowPos;
-        for (auto& gp : pts) {
-            if (gp.col == YELLOW) {
-                yellowPos.push_back(gp.pos);
-            }
-        }
-        // µ¹Ğò±éÀú£¬Óöµ½·Ç»ÆÉ«ÇÒÓëÈÎÒ»»ÆÉ«µã¾àÀëÆ½·½ ¡Ü r2 ÔòÉ¾³ı
-        for (int i = int(pts.size()) - 1; i >= 0; --i) {
-            if (pts[i].col == YELLOW) continue;
-            bool tooClose = false;
-            for (auto& yp : yellowPos) {
-                float dx = yp.x - pts[i].pos.x;
-                float dy = yp.y - pts[i].pos.y;
-                float dz = yp.z - pts[i].pos.z;
-                if (dx * dx + dy * dy + dz * dz <= r2) {
-                    tooClose = true;
-                    break;
-                }
-            }
-            if (tooClose) {
-                pts.erase(pts.begin() + i);
-            }
-        }
-    }
+    
 
-    // Í³Ò»¸üĞÂ½Ó¿Ú
+    // ç»Ÿä¸€æ›´æ–°æ¥å£
     void update() {
         switch (mode) {
         case PlacementMode::ParentRadial: placeParentRadial(); break;
@@ -182,7 +180,7 @@ public:
         }
     }
 
-    // »æÖÆº¯Êı£¨±£Áô²»±ä£©
+    // ç»˜åˆ¶å‡½æ•°ï¼ˆä¿ç•™ä¸å˜ï¼‰
     void draw() const {
         glPointSize(8.f);
         glBegin(GL_POINTS);
@@ -201,9 +199,9 @@ public:
     }
 
 private:
-    // µ±Ç°Ä£Ê½
+    // å½“å‰æ¨¡å¼
     PlacementMode mode = PlacementMode::Contour;
-    // ºËĞÄÊı¾İ
+    // æ ¸å¿ƒæ•°æ®
     std::array<std::vector<Alice::vec>, 3> seedsGroups;
     std::vector<GPoint> pts;
     std::vector<GLine>  lines;
@@ -214,7 +212,7 @@ private:
     size_t nextCircleIndex = 0;
     inline static std::mt19937 globalRng{ std::random_device{}() };
 
-    // ¹¤¾ßº¯Êı
+    // å·¥å…·å‡½æ•°
     static void setCol(ColorType c) {
         switch (c) {
         case BLUE:   glColor3f(0.22f, 0.906f, 0.89f); break;
@@ -237,7 +235,7 @@ private:
         return false;
     }
 
-    // ÑÕÉ«¼Ì³ĞÂß¼­
+    // é¢œè‰²ç»§æ‰¿é€»è¾‘
     ColorType chooseColor(const Alice::vec& pos, ColorType parentCol) const {
         std::uniform_real_distribution<float> inheritDist(0.0f, 1.0f);
         if (inheritDist(globalRng) < 0.3f) return parentCol;
@@ -249,7 +247,7 @@ private:
                 minD[g] = std::fmin(minD[g], dist(pos, s));
             }
         }
-        if (minD[0] <= 13.0f || minD[1] <= 7.0f || minD[2] <= 2.0f) return BLUE;
+        if (minD[0] <= 15.0f || minD[1] <= 15.0f || minD[2] <= 2.0f) return BLUE;
 
         float d = std::sqrt(pos.x * pos.x + pos.y * pos.y);
         std::uniform_int_distribution<int> D(1, 100);
@@ -258,8 +256,8 @@ private:
         if (d <= 20.0f) {
             switch (parentCol) {
             case ORANGE:
-                if (r <= 60)         return ORANGE;  // 60% ¡ú orange
-                else if (r <= 80)    return YELLOW;  // 20% ¡ú yellow (was 30%)
+                if (r <= 60)         return ORANGE;  // 60% â†’ orange
+                else if (r <= 80)    return YELLOW;  // 20% â†’ yellow (was 30%)
                 else                 return RED;     // 20%
             case YELLOW:
                 if (r <= 60)         return ORANGE;  // 60%
@@ -334,7 +332,14 @@ private:
             }
         }
     }
-    // Ä£Ê½1£º¸¸µã°ë¾¶8ÄÚËæ»ú·ÅÖÃ£¬×Óµã¼ä¾à>=3
+
+
+
+   
+
+
+
+    // æ¨¡å¼1ï¼šçˆ¶ç‚¹åŠå¾„8å†…éšæœºæ”¾ç½®ï¼Œå­ç‚¹é—´è·>=3
     
     void placeParentRadial() {
         if (pts.size() >= maxCount) return;
@@ -351,7 +356,7 @@ private:
 
             bool generated = false;
             for (int tries = 0; tries < 10; ++tries) {
-                // ¾ùÔÈÔ²ÅÌ²ÉÑù
+                // å‡åŒ€åœ†ç›˜é‡‡æ ·
                 float ang = angDist(globalRng);
                 float r = std::sqrt(unitDist(globalRng)) * parentR;
                 Alice::vec c{
@@ -361,7 +366,7 @@ private:
                 };
                 if (!within(c)) continue;
 
-                // ¾àÀë¼ì²é£º²»½öÒªºÍ¾ÉµÄ pts ±£³Ö¾àÀë£¬Ò²ÒªºÍ±¾ÂÖ newPts ±£³Ö¾àÀë
+                // è·ç¦»æ£€æŸ¥ï¼šä¸ä»…è¦å’Œæ—§çš„ pts ä¿æŒè·ç¦»ï¼Œä¹Ÿè¦å’Œæœ¬è½® newPts ä¿æŒè·ç¦»
                 bool ok = true;
                 for (auto& q : pts) {
                     if (dist(q.pos, c) < minD) { ok = false; break; }
@@ -372,7 +377,7 @@ private:
                 }
                 if (!ok) continue;
 
-                // ¶¼Í¨¹ıÁË²ÅËã new point
+                // éƒ½é€šè¿‡äº†æ‰ç®— new point
                 newPts.emplace_back(c, chooseColor(c, gp.col));
                 newLns.emplace_back(gp.pos, c);
                 generated = true;
@@ -384,7 +389,7 @@ private:
             }
         }
 
-        // ÍÆÈëĞÂµã
+        // æ¨å…¥æ–°ç‚¹
         for (size_t i = 0; i < newPts.size() && pts.size() < maxCount; ++i) {
             pts.push_back(std::move(newPts[i]));
             lines.push_back(std::move(newLns[i]));
@@ -393,13 +398,13 @@ private:
 
 
 
-    // Ä£Ê½2£º20¡Á20·½¸ñÖĞĞÄ·ÅÖÃ
+    // æ¨¡å¼2ï¼š20Ã—20æ–¹æ ¼ä¸­å¿ƒæ”¾ç½®
     void placeOnSquareGrid() {
         if (pts.size() >= maxCount) return;
 
         const float half = 50.0f;
-        const int   N = 18;                  // ¸ÄÎª 25¡Á25
-        const float cell = 100.0f / float(N);    // Ã¿¸ñ´óĞ¡
+        const int   N = 18;                  // æ”¹ä¸º 25Ã—25
+        const float cell = 100.0f / float(N);    // æ¯æ ¼å¤§å°
         const float parentR = 10.0f;
 
         std::vector<bool> occ(N * N, false);
@@ -445,7 +450,7 @@ private:
 
 
 
-    // Ä£Ê½3£ºÁù±ßĞÎ·äÎÑÍø¸ñÖĞĞÄ
+    // æ¨¡å¼3ï¼šå…­è¾¹å½¢èœ‚çªç½‘æ ¼ä¸­å¿ƒ
     void placeOnHexGrid() {
         if (pts.size() >= maxCount) return;
 
@@ -496,15 +501,16 @@ private:
         }
     }
 
+    
 
-    // Ä£Ê½4£ºÔ­ÓĞµÈ¸ßÏß·ÅÖÃÂß¼­
+    // æ¨¡å¼4ï¼šåŸæœ‰ç­‰é«˜çº¿æ”¾ç½®é€»è¾‘
     void placeOnContour() {
         if (pts.size() >= maxCount) return;
 
         std::vector<GPoint> newPts;
         std::vector<GLine>  newLns;
-        const float parentRadius = 8.0f;
-        const float minDist2 = 16.f;  // ×îĞ¡¾àÀëµÄÆ½·½£¨3 µ¥Î»¾àÀë£©
+        const float parentRadius = 25.0f;
+        const float minDist2 = 49.0f;  // (7)Â²
         size_t orig = pts.size();
 
         for (size_t i = 0; i < orig && pts.size() + newPts.size() < maxCount; ++i) {
@@ -514,31 +520,36 @@ private:
             bool generated = false;
             for (auto& line : contour0) {
                 for (auto& p : line) {
-                    float dx = p.x - gp.pos.x, dy = p.y - gp.pos.y;
+                    // â€”â€” æŠŠ Alice::vec è½¬æˆ zVectorï¼Œæ˜¾å¼ cast<doubleâ†’float> â€”â€” 
+                    zVector zp{
+                        static_cast<float>(p.x),
+                        static_cast<float>(p.y),
+                        static_cast<float>(p.z)
+                    };
+                    if (!pointInBoundary(zp)) continue;
+
+                    float dx = p.x - gp.pos.x;
+                    float dy = p.y - gp.pos.y;
                     if (dx * dx + dy * dy > parentRadius * parentRadius) continue;
 
+                    // 1) æ£€æŸ¥ä¸å·²æœ‰ç‚¹çš„æœ€å°è·ç¦»
                     bool ok = true;
-                    // 1) ¼ì²éÓëÒÑÓĞµãµÄ¾àÀë
                     for (auto& q : pts) {
-                        float ddx = q.pos.x - p.x, ddy = q.pos.y - p.y;
-                        if (ddx * ddx + ddy * ddy < minDist2) {
-                            ok = false;
-                            break;
-                        }
+                        float ddx = q.pos.x - p.x;
+                        float ddy = q.pos.y - p.y;
+                        if (ddx * ddx + ddy * ddy < minDist2) { ok = false; break; }
                     }
                     if (!ok) continue;
 
-                    // 2) **ĞÂÔö**£º¼ì²éÓë±¾´ÎÑ­»·ĞÂÉú³ÉµãµÄ¾àÀë
+                    // 2) æ£€æŸ¥ä¸æœ¬è½®æ–°ç”Ÿç‚¹çš„æœ€å°è·ç¦»
                     for (auto& np : newPts) {
-                        float ddx = np.pos.x - p.x, ddy = np.pos.y - p.y;
-                        if (ddx * ddx + ddy * ddy < minDist2) {
-                            ok = false;
-                            break;
-                        }
+                        float ddx = np.pos.x - p.x;
+                        float ddy = np.pos.y - p.y;
+                        if (ddx * ddx + ddy * ddy < minDist2) { ok = false; break; }
                     }
                     if (!ok) continue;
 
-                    // Âú×ãËùÓĞ¾àÀëÔ¼Êø£¬Éú³ÉĞÂµã
+                    // é€šè¿‡æ‰€æœ‰æ£€æµ‹ï¼Œç”Ÿæˆæ–°ç‚¹
                     Alice::vec av{ p.x, p.y, p.z };
                     newPts.emplace_back(av, chooseColor(av, gp.col));
                     newLns.emplace_back(gp.pos, av);
@@ -550,12 +561,13 @@ private:
             if (!generated) gp.active = false;
         }
 
-        // °Ñ newPts ºÍ newLns ÍÆÈëÖ÷ÁĞ±í
+        // å°† newPts/newLns å¹¶å…¥ä¸»åˆ—è¡¨
         for (size_t i = 0; i < newPts.size() && pts.size() < maxCount; ++i) {
             pts.push_back(std::move(newPts[i]));
             lines.push_back(std::move(newLns[i]));
         }
     }
+
 
 
 };
