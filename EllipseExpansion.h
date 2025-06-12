@@ -7,11 +7,11 @@
 #include <ctime>
 #include <algorithm>
 #include <headers/zApp/include/zObjects.h>
-#include "ColorGrowth.h"  // ¶¨Òå ColorType¡¢GPoint
+#include "ColorGrowth.h"  // å®šä¹‰ ColorTypeã€GPoint
 
 namespace zSpace {
 
-    // ¡ª¡ª¡ª¡ª ¸¨Öúº¯Êı ¡ª¡ª¡ª¡ª
+    // â€”â€”â€”â€” è¾…åŠ©å‡½æ•° â€”â€”â€”â€”
     inline float distPointSegment(
         const zVector& P,
         const zVector& A,
@@ -26,51 +26,60 @@ namespace zSpace {
         return (P - H).length();
     }
 
-    // ¡ª¡ª¡ª¡ª ÍÖÔ²±ß½çµã½á¹¹ ¡ª¡ª¡ª¡ª
+    // â€”â€”â€”â€” æ¤­åœ†è¾¹ç•Œç‚¹ç»“æ„ â€”â€”â€”â€”
     struct EPoint {
-        zVector                  pos;        // Ô²ĞÄ
-        zVector                  rep;        // Ö÷·½ÏòÏòÁ¿£¨¶ÌÖá·½Ïò£©
-        ColorType                col;        // ÑÕÉ«
-        std::vector<zVector>     boundary;   // ±ß½çµã
-        std::vector<bool>        frozen;     // ¶³½á±êÖ¾
-        float                    maxRadius;  // °üÎ§°ë¾¶
+        zVector                  pos;        // åœ†å¿ƒ
+        zVector                  rep;        // ä¸»æ–¹å‘å‘é‡ï¼ˆçŸ­è½´æ–¹å‘ï¼‰
+        ColorType                col;        // é¢œè‰²
+        std::vector<zVector>     boundary;   // è¾¹ç•Œç‚¹
+        std::vector<bool>        frozen;     // å†»ç»“æ ‡å¿—
+        std::vector<zVector> regionCenters;
+        float                    maxRadius;  // åŒ…å›´åŠå¾„
     };
 
-    // ¡ª¡ª¡ª¡ª ÍÖÔ²À©É¢Àà ¡ª¡ª¡ª¡ª
+    // â€”â€”â€”â€” æ¤­åœ†æ‰©æ•£ç±» â€”â€”â€”â€”
     class EllipseExpansion {
-        //¡ª¡ª Ë½ÓĞ³ÉÔ± ¡ª¡ª
+    public:
+        //â€”â€” ç§æœ‰æˆå‘˜ â€”â€”
         std::vector<EPoint>                           ellipses;
         std::vector<std::pair<zVector, zVector>>       splineLines, rayLines, edgeLines;
-        std::vector<std::pair<zVector, zVector>>       yellowLines;                           // ĞÂÔö»ÆÏß´æ´¢
+        std::vector<std::pair<zVector, zVector>>       yellowLines;                           // æ–°å¢é»„çº¿å­˜å‚¨
+        std::vector<std::vector<zVector>>             contour0Lines;
         std::vector<std::vector<zVector>>             contour1Lines;
-        const int                                     STEPS = 35;
-        const float                                   SAME_DIST = 0.8;
-        const float                                   DIFF_DIST = 0.8f;
+        std::vector<std::pair<zVector, zVector>> pointSegments;
+
+        const int                                     STEPS = 45;
+        const float                                   SAME_DIST = 1.2;
+        const float                                   DIFF_DIST = 1.2f;
         const std::array<float, 6>                    growRates = { 0.3f,0.3f,0.3f,0.3f,0.3f,0.3f };
         bool                                          showOffset = false;
         bool                                          deforming = false;
         bool                                          fillMode = false;
         double                                        lastTime = 0.0;
+        double lastTimeCircles = 0.0;   // é©±åŠ¨å°åœ†æ‰©æ•£
         std::vector<std::vector<zVector>>             evenContourLines;
-        bool    showVectorTriangle = false;      // ĞÂÔö£º°´ t ¼üÏÔÊ¾ vector+Èı½ÇĞÎ
-        float   vectorTriHeight = 2.f;       // Èı½ÇĞÎµÄ¡°¸ß¡±
-        float   vectorBaseWidth = 0.8f;       // Èı½ÇĞÎµÄ¡°µ×±ß¿í¶È¡±
+        bool    showVectorTriangle = false;      // æ–°å¢ï¼šæŒ‰ t é”®æ˜¾ç¤º vector+ä¸‰è§’å½¢
+        float   vectorTriHeight = 2.f;       // ä¸‰è§’å½¢çš„â€œé«˜â€
+        float   vectorBaseWidth = 0.8f;       // ä¸‰è§’å½¢çš„â€œåº•è¾¹å®½åº¦â€
         static inline zVector normalize(const zVector& v) {
             float len = std::sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
             if (len > 1e-6f) {
                 return zVector{ v.x / len, v.y / len, v.z / len };
             }
-            return v;  // ÁãÏòÁ¿Ô­Ñù·µ»Ø
+            return v;  // é›¶å‘é‡åŸæ ·è¿”å›
         }
 
-        zVector                      seed0_;        // ĞÂÔö£ºÖ÷ÖÖ×Ó
-        std::vector<zVector>         seeds_;        // ĞÂÔö£ºnet.build() ÀïËãµÄÄÇÁ½¸ö seed1
+        zVector                      seed0_;        // æ–°å¢ï¼šä¸»ç§å­
+        std::vector<zVector>         seeds_;        // æ–°å¢ï¼šnet.build() é‡Œç®—çš„é‚£ä¸¤ä¸ª seed1
 
 
-    public:
+        struct EpDrawData {
+            std::vector<std::pair<zVector, zVector>> lines;
+            std::vector<zVector> midpoints;
+        };
+        std::vector<EpDrawData> drawDataPerEllipse;
 
-
-        //¡ª¡ª ³õÊ¼»¯²¢ÖØÖÃ£¨drawContourMap ´¥·¢£© ¡ª¡ª
+        //â€”â€” åˆå§‹åŒ–å¹¶é‡ç½®ï¼ˆdrawContourMap è§¦å‘ï¼‰ â€”â€”
         void init(
             const zVector& seed0,
             const std::vector<zVector>& seed1,
@@ -78,20 +87,20 @@ namespace zSpace {
             const std::vector<std::pair<zVector, zVector>>& _splineLines,
             const std::vector<std::pair<zVector, zVector>>& _rayLines,
             const std::vector<std::pair<zVector, zVector>>& _edgeLines,
-            const std::vector<std::pair<zVector, zVector>>& yellowLinesParam  // ĞÂÔö²ÎÊı
+            const std::vector<std::pair<zVector, zVector>>& yellowLinesParam  // æ–°å¢å‚æ•°
         )
         {
             ellipses.clear();
             splineLines = _splineLines;
             rayLines = _rayLines;
             edgeLines = _edgeLines;
-            yellowLines = yellowLinesParam;  // ´æ´¢»ÆÏßÊı¾İ
+            yellowLines = yellowLinesParam;  // å­˜å‚¨é»„çº¿æ•°æ®
             deforming = false;
             fillMode = false;
 
 
 
-            // ¹¹½¨¸ß¶È³¡Ìİ¶È lambda
+            // æ„å»ºé«˜åº¦åœºæ¢¯åº¦ lambda
             constexpr float sigma2 = 15.0f * 15.0f;
             auto gradH = [&](float x, float y) {
                 zVector g{ 0,0,0 };
@@ -109,10 +118,10 @@ namespace zSpace {
             for (auto& gp : growthPts) {
                 zVector p(gp.pos.x, gp.pos.y, gp.pos.z);
 
-                // 1) ÕÒµ½ nearest contour1Lines ÀïÓë p ×î½üµÄÏß¶Î£¬ÒÔËüµÄ·½Ïò×öÇĞÏß
+                // 1) æ‰¾åˆ° nearest contour1Lines é‡Œä¸ p æœ€è¿‘çš„çº¿æ®µï¼Œä»¥å®ƒçš„æ–¹å‘åšåˆ‡çº¿
                 zVector tangent{ 1,0,0 };
                 float bestD = 1e6f;
-                for (auto& contour : contour1Lines) {
+                for (auto& contour : contour0Lines) {
                     for (size_t i = 0; i + 1 < contour.size(); i += 2) {
                         float d = distPointSegment(p, contour[i], contour[i + 1]);
                         if (d < bestD) {
@@ -124,25 +133,25 @@ namespace zSpace {
                 float tl = std::hypot(tangent.x, tangent.y);
                 if (tl > 1e-6f) tangent.x /= tl, tangent.y /= tl;
 
-                // 2) ÓÃÕâ¸öÇĞÏß·½Ïò¹¹ÔìÍÖÔ²Ö÷¸±Öá
-                zVector major = tangent * 0.4f;
+                // 2) ç”¨è¿™ä¸ªåˆ‡çº¿æ–¹å‘æ„é€ æ¤­åœ†ä¸»å‰¯è½´
+                zVector major = tangent * 1.6f;
                 zVector minor = zVector(-tangent.y, tangent.x, 0) * 0.8f;
 
-                // 3) ³õÊ¼»¯ EPoint
+                // 3) åˆå§‹åŒ– EPoint
                 EPoint ep;
                 ep.pos = p;
                 ep.rep = minor;
                 ep.col = gp.col;
                 ep.boundary.resize(STEPS);
                 ep.frozen.assign(STEPS, false);
-                ep.maxRadius = 7.0f;
+                ep.maxRadius = 20.0f;
 
-                // 4) ¸ù¾İ³¤¶ÌÖáÉú³É±ß½ç
+                // 4) æ ¹æ®é•¿çŸ­è½´ç”Ÿæˆè¾¹ç•Œ
                 for (int k = 0; k < STEPS; ++k) {
-                    float ¦È = 2 * M_PI * k / STEPS;
+                    float Î¸ = 2 * M_PI * k / STEPS;
                     ep.boundary[k] = p
-                        + major * std::cos(¦È)
-                        + minor * std::sin(¦È);
+                        + major * std::cos(Î¸)
+                        + minor * std::sin(Î¸);
                 }
                 ellipses.push_back(ep);
             }
@@ -153,11 +162,11 @@ namespace zSpace {
             showVectorTriangle = !showVectorTriangle;
         }
 
-        // ÆäÊµ»æÖÆ£º±éÀúÃ¿¸ö ellipse£¬Ëã³ö³¤Öá·½Ïò£¬»­Ïß+µÈÑüÈı½ÇĞÎ
+        // å…¶å®ç»˜åˆ¶ï¼šéå†æ¯ä¸ª ellipseï¼Œç®—å‡ºé•¿è½´æ–¹å‘ï¼Œç”»çº¿+ç­‰è…°ä¸‰è§’å½¢
         void zSpace::EllipseExpansion::drawVectorTriangles() {
             if (!showVectorTriangle) return;
 
-            // ¡ª¡ª ÔÚÕâÀïÖ±½Ó¶¨ÒåÈı¸öÅÅ³âµã ¡ª¡ª 
+            // â€”â€” åœ¨è¿™é‡Œç›´æ¥å®šä¹‰ä¸‰ä¸ªæ’æ–¥ç‚¹ â€”â€” 
             std::vector<zVector> repulsionPoints;
             repulsionPoints.emplace_back(-45.f, 15.f, 0.f);
             repulsionPoints.emplace_back(19.2046f, 4.86243f, 0.f);
@@ -169,7 +178,7 @@ namespace zSpace {
             for (auto& ep : ellipses) {
                 const auto& C = ep.pos;
 
-                // 1) ¼ÆËã¶ÔÕâÈı¸öµãµÄ·´Æ½·½ºÏÁ¦
+                // 1) è®¡ç®—å¯¹è¿™ä¸‰ä¸ªç‚¹çš„åå¹³æ–¹åˆåŠ›
                 zVector rep{ 0,0,0 };
                 for (auto& S : repulsionPoints) {
                     zVector d{ C.x - S.x, C.y - S.y, 0 };
@@ -180,20 +189,20 @@ namespace zSpace {
                     }
                 }
 
-                // 2) ¹éÒ»»¯ºÏÁ¦·½Ïò
+                // 2) å½’ä¸€åŒ–åˆåŠ›æ–¹å‘
                 float len = std::sqrt(rep.x * rep.x + rep.y * rep.y);
                 if (len < 1e-6f) continue;
                 //zVector dir{ -rep.y / len, rep.x / len, 0.0f };
                 zVector dir{ rep.x / len, rep.y / len, 0.0f };
 
 
-                // 3) ¼ÆËãÈı½ÇĞÎ¶¥µãºÍµ×±ß
+                // 3) è®¡ç®—ä¸‰è§’å½¢é¡¶ç‚¹å’Œåº•è¾¹
                 zVector apex{ C.x + dir.x * H, C.y + dir.y * H, C.z };
                 zVector perp{ -dir.y, dir.x, 0 };
                 zVector b1{ C.x + perp.x * (W * 0.5f), C.y + perp.y * (W * 0.5f), C.z };
                 zVector b2{ C.x - perp.x * (W * 0.5f), C.y - perp.y * (W * 0.5f), C.z };
 
-                // 4) »­ºÏÁ¦ÏòÁ¿
+                // 4) ç”»åˆåŠ›å‘é‡
                 glColor3f(0, 0, 0);
                 glLineWidth(2.0f);
                 glBegin(GL_LINES);
@@ -201,7 +210,7 @@ namespace zSpace {
                 glVertex3f(apex.x, apex.y, apex.z);
                 glEnd();
 
-                // 5) »­µÈÑüÈı½ÇĞÎ
+                // 5) ç”»ç­‰è…°ä¸‰è§’å½¢
                 glColor3f(0, 0, 0);
                 glBegin(GL_TRIANGLES);
                 glVertex3f(apex.x, apex.y, apex.z);
@@ -214,14 +223,14 @@ namespace zSpace {
 
 
 
-        //¡ª¡ª ÇĞ»»µ½±äĞÎÄ£Ê½ ¡ª¡ª
+        //â€”â€” åˆ‡æ¢åˆ°å˜å½¢æ¨¡å¼ â€”â€”
         void startDeform()
         {
             deforming = true;
             lastTime = std::clock() / double(CLOCKS_PER_SEC);
         }
 
-        //¡ª¡ª ÈıµãÆ½»¬£¬ÎŞÊÕËõ ¡ª¡ª
+        //â€”â€” ä¸‰ç‚¹å¹³æ»‘ï¼Œæ— æ”¶ç¼© â€”â€”
         void cornerSmooth(int passes)
         {
             const int N = STEPS;
@@ -239,13 +248,333 @@ namespace zSpace {
             fillMode = true;
         }
 
-        //¡ª¡ª ´«ÈëÅ¼Êı²ãµÈ¸ßÏßÓÃÓÚ¶³½á¼ì²â ¡ª¡ª
+        //â€”â€” ä¼ å…¥å¶æ•°å±‚ç­‰é«˜çº¿ç”¨äºå†»ç»“æ£€æµ‹ â€”â€”
         void setContour1Lines(const std::vector<std::vector<zVector>>& evens)
         {
-            contour1Lines = evens;
+            contour0Lines = evens;
         }
 
-        //¡ª¡ª Ã¿Ö¡¸üĞÂ ¡ª¡ª
+        void setPointSegments(const std::vector<std::pair<zVector, zVector>>& segs) {
+            pointSegments = segs;
+        }
+
+
+        //-----------------------------------------
+
+
+
+        bool segmentsIntersect(const zVector& a, const zVector& b, const zVector& c, const zVector& d, zVector& intersection) {
+            // 2Då¹³é¢ç›´çº¿æ®µç›¸äº¤
+            float s1_x = b.x - a.x;
+            float s1_y = b.y - a.y;
+            float s2_x = d.x - c.x;
+            float s2_y = d.y - c.y;
+
+            float denom = (-s2_x * s1_y + s1_x * s2_y);
+            if (fabs(denom) < 1e-8f) return false; // å¹³è¡Œ
+
+            float s = (-s1_y * (a.x - c.x) + s1_x * (a.y - c.y)) / denom;
+            float t = (s2_x * (a.y - c.y) - s2_y * (a.x - c.x)) / denom;
+            if (s >= 0 && s <= 1 && t >= 0 && t <= 1) {
+                intersection.x = a.x + (t * s1_x);
+                intersection.y = a.y + (t * s1_y);
+                intersection.z = a.z; // å¿½ç•¥z
+                return true;
+            }
+            return false;
+        }
+
+
+        zVector polygonCentroid(const std::vector<zVector>& poly) {
+            double A = 0, Cx = 0, Cy = 0;
+            int n = poly.size();
+            for (int i = 0; i < n; ++i) {
+                const auto& p0 = poly[i];
+                const auto& p1 = poly[(i + 1) % n];
+                double cross = p0.x * p1.y - p1.x * p0.y;
+                A += cross;
+                Cx += (p0.x + p1.x) * cross;
+                Cy += (p0.y + p1.y) * cross;
+            }
+            A *= 0.5;
+            if (std::abs(A) < 1e-7) return zVector(0, 0, 0);
+            Cx /= (6 * A);
+            Cy /= (6 * A);
+            return zVector(Cx, Cy, 0);
+        }
+
+
+
+        // ä¸»å…¥å£ï¼šåˆ†å‰²å¹¶è®¡ç®—ä¸­å¿ƒç‚¹
+        void EllipseExpansion::splitAllEllipsesWithContourAndVector() {
+            for (auto& ep : ellipses) {
+                ep.regionCenters.clear();
+
+                zVector center = ep.pos;
+                zVector dir = normalize(ep.rep);           // ä¸»æ–¹å‘
+                zVector orth = zVector(-dir.y, dir.x, 0.0f); // æ­£äº¤æ–¹å‘
+
+                // 1) æ‰¾ orthï¼ˆè¿‡ centerï¼‰ä¸ boundary çš„ä¸¤ä¸ªäº¤ç‚¹ Aã€B
+                std::vector<zVector> orthoInters;
+                std::vector<int>     orthoIdxs;
+                for (int i = 0; i < ep.boundary.size(); ++i) {
+                    zVector a = ep.boundary[i];
+                    zVector b = ep.boundary[(i + 1) % ep.boundary.size()];
+                    zVector o0 = center - orth * 2000.f;
+                    zVector o1 = center + orth * 2000.f;
+                    zVector interP;
+                    if (segmentsIntersect(a, b, o0, o1, interP)) {
+                        orthoInters.push_back(interP);
+                        orthoIdxs.push_back(i + 1);
+                    }
+                }
+                auto get2closest = [&](std::vector<zVector>& pts, std::vector<int>& idxs, const zVector& ref) {
+                    if (pts.size() > 2) {
+                        std::vector<std::pair<float, int>> dist_idx;
+                        for (int i = 0; i < pts.size(); ++i) {
+                            float d2 = (pts[i].x - ref.x) * (pts[i].x - ref.x)
+                                + (pts[i].y - ref.y) * (pts[i].y - ref.y);
+                            dist_idx.emplace_back(d2, i);
+                        }
+                        std::sort(dist_idx.begin(), dist_idx.end());
+                        pts = { pts[dist_idx[0].second], pts[dist_idx[1].second] };
+                        idxs = { idxs[dist_idx[0].second], idxs[dist_idx[1].second] };
+                    }
+                    };
+                get2closest(orthoInters, orthoIdxs, center);
+                if (orthoInters.size() != 2) continue;
+
+                // 2) è®¡ç®— Aã€B çš„ä¸­ç‚¹ center2
+                zVector center2 = (orthoInters[0] + orthoInters[1]) * 0.5f;
+
+                // 3) æ‰¾ç»è¿‡ center2ã€æ–¹å‘ä¸º dirï¼ˆå³æ­£äº¤äº orthï¼‰é‚£æ¡çº¿ä¸ boundary çš„ä¸¤ä¸ªäº¤ç‚¹ Cã€D
+                std::vector<zVector> dir2Inters;
+                std::vector<int>     dir2Idxs;
+                for (int i = 0; i < ep.boundary.size(); ++i) {
+                    zVector a = ep.boundary[i];
+                    zVector b = ep.boundary[(i + 1) % ep.boundary.size()];
+                    zVector d0 = center2 - dir * 2000.f;
+                    zVector d1 = center2 + dir * 2000.f;
+                    zVector interP;
+                    if (segmentsIntersect(a, b, d0, d1, interP)) {
+                        dir2Inters.push_back(interP);
+                        dir2Idxs.push_back(i + 1);
+                    }
+                }
+                get2closest(dir2Inters, dir2Idxs, center2);
+                if (dir2Inters.size() != 2) continue;
+
+                // 4) æŠŠè¿™å››ä¸ªäº¤ç‚¹æ’å…¥åˆ° boundaryï¼Œå¾—åˆ° newBoundary å’Œå¯¹åº”ç´¢å¼• cutIdxs
+                std::vector<std::pair<int, zVector>> allInserts;
+                for (int i = 0; i < 2; ++i) allInserts.emplace_back(orthoIdxs[i], orthoInters[i]);
+                for (int i = 0; i < 2; ++i) allInserts.emplace_back(dir2Idxs[i], dir2Inters[i]);
+                std::sort(allInserts.begin(), allInserts.end(),
+                    [](auto& a, auto& b) { return a.first < b.first; });
+
+                std::vector<zVector> newBoundary = ep.boundary;
+                std::vector<int>     cutIdxs;
+                int insertCount = 0;
+                for (auto& pr : allInserts) {
+                    newBoundary.insert(newBoundary.begin() + pr.first + insertCount,
+                        pr.second);
+                    cutIdxs.push_back(pr.first + insertCount);
+                    ++insertCount;
+                }
+
+                // 5) ç”¨å››ä¸ªæ’å…¥ç‚¹æŠŠ newBoundary åˆ†æˆ 4 å—ï¼Œæ¯å—å…ˆåŠ  center2ï¼Œå†åŠ å¼§æ®µé¡¶ç‚¹ï¼Œæœ€åç®—è´¨å¿ƒ
+                int sz = newBoundary.size();
+                std::sort(cutIdxs.begin(), cutIdxs.end());
+                for (int s = 0; s < 4; ++s) {
+                    int i0 = cutIdxs[s];
+                    int i1 = cutIdxs[(s + 1) % 4];
+
+                    // æ„é€ æ‰‡åŒºå¤šè¾¹å½¢
+                    std::vector<zVector> region;
+                    region.push_back(center2);  // å…³é”®ï¼šæŠŠ center2 ä½œä¸ºç¬¬ä¸€ä¸ªé¡¶ç‚¹
+
+                    // æŠŠ boundary ä¸Šä» i0 (å«) åˆ° i1 (å«) çš„é¡¶ç‚¹ä¾æ¬¡åŠ å…¥
+                    int k = i0;
+                    do {
+                        region.push_back(newBoundary[k]);
+                        k = (k + 1) % sz;
+                    } while (k != (i1 + 1) % sz);
+
+                    if (region.size() >= 3) {
+                        // ç›´æ¥æ±‚å‡ºè´¨å¿ƒ
+                        zVector c = polygonCentroid(region);
+                        // å¦‚æœéœ€è¦å¯ä»¥å†åšä¸€æ¬¡å¾€ä¸­å¿ƒçš„æ’å€¼ï¼š
+                        // c = center + (c - center) * 0.5f;
+                        ep.regionCenters.push_back(c);
+                    }
+                }
+            }
+        }
+
+
+
+        //-----------------------------------------
+
+        //----------------------------------------
+
+
+
+        struct CPoint {
+            zVector                  pos;       // åœ†å¿ƒ
+            std::vector<zVector>     boundary;  // åœ†å‘¨ä¸Šçš„æ£€æµ‹ç‚¹
+            std::vector<bool>        frozen;    // æ¯ä¸ªæ£€æµ‹ç‚¹æ˜¯å¦è¢«å†»ç»“
+            float                    maxRadius; // æœ€é«˜æ‰©æ•£åŠå¾„ï¼ˆå½“å‰æ— ç”¨ï¼Œå¯ç•™ç€æ‰©å±•ï¼‰
+        };
+        std::vector<CPoint> circles;            // å­˜æ”¾æ‰€æœ‰è´¨å¿ƒåœ†
+
+        // 1) æ ¹æ® regionCenters ç”Ÿæˆå°åœ†æ£€æµ‹ç§å­ï¼Œå¹¶åˆå§‹åŒ–å°åœ†æ—¶é’Ÿ
+        inline void EllipseExpansion::initCircleSeeds() {
+            circles.clear();
+            for (auto& ep : ellipses) {
+                for (auto& c : ep.regionCenters) {
+                    // åªåœ¨ xâˆˆ[-50,-10], yâˆˆ[10,90] çš„æ­£æ–¹å½¢åŒºåŸŸå†…ç”Ÿæˆå°åœ†
+                    if (c.x < -50.0f || c.x > -10.0f || c.y < 10.0f || c.y > 90.0f)
+                        continue;
+
+                    CPoint cp;
+                    cp.pos = c;
+                    cp.maxRadius = 0.3f;
+                    cp.boundary.resize(STEPS);
+                    cp.frozen.assign(STEPS, false);
+                    // åœ¨è´¨å¿ƒå‘¨å›´ç­‰åˆ†ç”Ÿæˆæ£€æµ‹ç‚¹
+                    for (int i = 0; i < STEPS; ++i) {
+                        float Î¸ = 2 * M_PI * i / STEPS;
+                        cp.boundary[i] = {
+                            c.x + std::cos(Î¸) * 0.8f,
+                            c.y + std::sin(Î¸) * 0.8f,
+                            c.z
+                        };
+                    }
+                    circles.push_back(cp);
+                }
+            }
+            // ä½¿èƒ½å˜å½¢/æ‰©æ•£é€»è¾‘
+            deforming = true;
+            // é‡ç½®å°åœ†ä¸“ç”¨æ—¶é’Ÿ
+            lastTimeCircles = std::clock() / double(CLOCKS_PER_SEC);
+        }
+
+        inline void EllipseExpansion::updateCircles() {
+            if (!deforming) return;
+            double now = std::clock() / double(CLOCKS_PER_SEC);
+            float dt = float(now - lastTimeCircles);
+            lastTimeCircles = now;
+
+            for (auto& cp : circles) {
+                for (int k = 0; k < STEPS; ++k) {
+                    if (cp.frozen[k]) continue;
+                    zVector P = cp.boundary[k];
+
+                    // â€”â€” å†»ç»“æ£€æµ‹ â€”â€”  
+                    bool freeze = false;
+
+                    // 2.1 æ’å¤§æ¤­åœ†è¾¹
+                    for (auto& ep : ellipses) {
+                        for (int j = 0; j + 1 < (int)ep.boundary.size(); ++j) {
+                            if (distPointSegment(P, ep.boundary[j], ep.boundary[j + 1]) < 0.8f) {
+                                freeze = true; break;
+                            }
+                        }
+                        if (freeze) break;
+                    }
+                    if (freeze) { cp.frozen[k] = true; continue; }
+
+                    // 2.2 åœ†ä¸åœ†ç¢°æ’
+                    for (auto& other : circles) {
+                        if (&other == &cp) continue;
+                        for (auto& Q : other.boundary) {
+                            if ((P - Q).length() < 0.8f) {
+                                freeze = true; break;
+                            }
+                        }
+                        if (freeze) break;
+                    }
+                    if (freeze) { cp.frozen[k] = true; continue; }
+
+                    // 2.3 ç‚¹äº‘çº¿æ®µæ£€æµ‹
+                    for (auto& seg : pointSegments) {
+                        if (distPointSegment(P, seg.first, seg.second) < DIFF_DIST) {
+                            freeze = true; break;
+                        }
+                    }
+                    if (freeze) { cp.frozen[k] = true; continue; }
+
+                    // 2.4 å¶æ•°å±‚ç­‰é«˜çº¿ï¼ˆcontour0ï¼‰æ£€æµ‹ï¼Œé˜ˆå€¼ 0.8
+                    for (auto& contour : contour1Lines) {
+                        for (size_t j = 0; j + 1 < contour.size(); j += 2) {
+                            if (distPointSegment(P, contour[j], contour[j + 1]) < 0.8f) {
+                                freeze = true;
+                                break;
+                            }
+                        }
+                        if (freeze) break;
+                    }
+                    if (freeze) { cp.frozen[k] = true; continue; }
+
+                    // â€”â€” æ‰©æ•£ â€”â€”  
+                    zVector dir = P - cp.pos;
+                    zVector cand = cp.pos + dir * (1.0f + growRates[int(ColorType::BLUE)] * dt);
+                    // è¶Šç•Œå°±å†»ç»“
+                    if (cand.x < -100 || cand.x > 100 || cand.y < -100 || cand.y > 100) {
+                        cp.frozen[k] = true;
+                    }
+                    else {
+                        cp.boundary[k] = cand;
+                    }
+                }
+            }
+        }
+
+
+        // 3) å°åœ†çš„ç»˜åˆ¶ä¿æŒä¸å˜
+        inline void EllipseExpansion::drawCircles() {
+            // 3.1 ç”»åœ†è½®å»“
+            glColor3f(1, 0, 0);
+            for (auto& cp : circles) {
+                glBegin(GL_LINE_LOOP);
+                for (auto& p : cp.boundary) glVertex3f(p.x, p.y, p.z);
+                glEnd();
+            }
+            // 3.2 ç”»æ£€æµ‹ç‚¹ï¼ˆå°é»‘ç‚¹ï¼‰
+            glColor3f(0, 0, 0);
+            for (auto& cp : circles) {
+                for (auto& p : cp.boundary) {
+                    drawCircle(z2A(p), 0.05f, 6);
+                }
+            }
+        }
+
+
+        void circleCornerSmooth(int passes)
+        {
+            const int N = STEPS;
+            for (int it = 0; it < passes; ++it)
+            {
+                for (auto& cp : circles)
+                {
+                    auto bak = cp.boundary;
+                    for (int k = 0; k < N; ++k)
+                    {
+                        int km = (k - 1 + N) % N;
+                        int kp = (k + 1) % N;
+                        cp.boundary[k] = bak[k] * 0.75f
+                            + bak[km] * 0.125f
+                            + bak[kp] * 0.125f;
+                    }
+                }
+            }
+        }
+
+
+
+        //-------------------------------------------
+
+
+        //â€”â€” æ¯å¸§æ›´æ–° â€”â€”
         void update()
         {
             if (!deforming) return;
@@ -254,19 +583,19 @@ namespace zSpace {
             lastTime = now;
 
             for (auto& ep : ellipses) {
-                // 1) Ãâ¼ìÇøÓò
-                float dx0 = ep.pos.x + 50.0f, dy0 = ep.pos.y + 50.0f;
+                // 1) å…æ£€åŒºåŸŸ
+                float dx0 = ep.pos.x + 100.0f, dy0 = ep.pos.y + 100.0f;
                 bool skipDetect = (dx0 * dx0 + dy0 * dy0 <= 0.0f);
 
                 for (int k = 0; k < STEPS; ++k) {
                     if (ep.frozen[k]) continue;
                     zVector oldP = ep.boundary[k];
 
-                    // 2) yellowLines ¶³½á¼ì²â
+                    // 2) yellowLines å†»ç»“æ£€æµ‹
                     bool freeze = false;
                     if (!skipDetect) {
                         for (auto& seg : yellowLines) {
-                            if (distPointSegment(oldP, seg.first, seg.second) < 1.5f) {
+                            if (distPointSegment(oldP, seg.first, seg.second) < 1.1f) {
                                 freeze = true;
                                 break;
                             }
@@ -274,18 +603,33 @@ namespace zSpace {
                     }
                     if (freeze) { ep.frozen[k] = true; continue; }
 
-                    // 3) Å¼Êı²ãµÈ¸ßÏß¼ì²â
-                   // for (auto& contour : contour1Lines) {
-                       // for (size_t j = 0; j + 1 < contour.size(); j += 2) {
-                           // if (distPointSegment(oldP, contour[j], contour[j + 1]) <= 0.1f) {
-                              //  freeze = true; break;
-                         // }
-                       // }
-                        //if (freeze) break;
-                  //  }
-                   // if (freeze) { ep.frozen[k] = true; continue; }
+                    //// 3) å¶æ•°å±‚ç­‰é«˜çº¿æ£€æµ‹
+                    //for (auto& contour : contour1Lines) {
+                    //    for (size_t j = 0; j + 1 < contour.size(); j += 2) {
+                    //        if (distPointSegment(oldP, contour[j], contour[j + 1]) <= 0.1f) {
+                    //            freeze = true; break;
+                    //     }
+                    //    }
+                    //    if (freeze) break;
+                    //}
+                    //if (freeze) { ep.frozen[k] = true; continue; }
 
-                    // 4) ÍÖÔ²¼äÅö×²¼ì²â
+
+                    // â€”â€”â€” 4) ç‚¹äº‘çº¿æ®µæ£€æµ‹ â€”â€”â€”
+
+                    for (auto& seg : pointSegments) {
+                        if (distPointSegment(ep.boundary[k], seg.first, seg.second) < 1.5f) {
+                            freeze = true;
+                            break;
+                        }
+                    }
+                    if (freeze) {
+                        ep.frozen[k] = true;
+                        continue;
+                    }
+
+
+                    // 4) æ¤­åœ†é—´ç¢°æ’æ£€æµ‹
                     bool stop = false;
                     for (auto& o : ellipses) {
                         if (&o == &ep) continue;
@@ -299,10 +643,10 @@ namespace zSpace {
                     }
                     if (stop) { ep.frozen[k] = true; continue; }
 
-                    // 5) À©É¢ÒÆ¶¯
+                    // 5) æ‰©æ•£ç§»åŠ¨
                     zVector dir = oldP - ep.pos;
                     zVector cand = ep.pos + dir * (1.0f + growRates[int(ep.col)] * dt);
-                    if (cand.x < -50 || cand.x > 50 || cand.y < -50 || cand.y > 50) {
+                    if (cand.x < -100 || cand.x > 100 || cand.y < -100 || cand.y > 100) {
                         ep.frozen[k] = true;
                     }
                     else {
@@ -310,37 +654,69 @@ namespace zSpace {
                     }
                 }
             }
+            updateCircles();
+
         }
 
-        //¡ª¡ª ÇĞ»»ÄÚÆ«ÒÆÏÔÊ¾ ¡ª¡ª
+        //â€”â€” åˆ‡æ¢å†…åç§»æ˜¾ç¤º â€”â€”
         void toggleOffset()
         {
             showOffset = !showOffset;
         }
 
-        //¡ª¡ª »æÖÆËùÓĞÍÖÔ² ¡ª¡ª
+        //â€”â€” ç»˜åˆ¶æ‰€æœ‰æ¤­åœ† â€”â€”
         void draw()
         {
             for (auto& ep : ellipses) {
                 if (fillMode) {
-                    // ²ÊÉ«Ìî³ä
+                    // å½©è‰²å¡«å……
                     float r, g, b;
                     switch (ep.col) {
-                    case BLUE:   r = 0.220f; g = 0.906f; b = 0.890f; break;
+                    case RED:    // #87151F â†’ (135, 21, 31)
+                        r = 135.0f / 255.0f;  // â‰ˆ0.529f
+                        g = 21.0f / 255.0f;  // â‰ˆ0.082f
+                        b = 31.0f / 255.0f;  // â‰ˆ0.122f
+                        break;
+                    case ORANGE:      // #F27D20 â†’ (242, 125, 32)
+                        r = 242.0f / 255.0f;  // â‰ˆ0.949f
+                        g = 100.0f / 255.0f;  // â‰ˆ0.490f
+                        b = 12.0f / 255.0f;  // â‰ˆ0.125f
+                        break;
+                    case GREEN:        // #80CBA4 â†’ (128, 203, 164)
+                        r = 128.0f / 255.0f;  // â‰ˆ0.502f
+                        g = 203.0f / 255.0f;  // â‰ˆ0.796f
+                        b = 164.0f / 255.0f;  // â‰ˆ0.643f
+                        break;
+                    case YELLOW:  // #7D CF DB â†’ (125, 207, 219)
+                        r = 125.0f / 255.0f;  // â‰ˆ0.490f
+                        g = 207.0f / 255.0f;  // â‰ˆ0.812f
+                        b = 219.0f / 255.0f;  // â‰ˆ0.859f
+                        break;
+                    case BLUE:        // #3683AF â†’ (54, 131, 175)
+                        r = 54.0f / 255.0f;  // â‰ˆ0.212f
+                        g = 131.0f / 255.0f;  // â‰ˆ0.514f
+                        b = 175.0f / 255.0f;  // â‰ˆ0.686f
+                        break;
+                    case PURPLE:        // #28336B â†’ (40, 51, 107)
+                        r = 40.0f / 255.0f;  // â‰ˆ0.157f
+                        g = 51.0f / 255.0f;  // â‰ˆ0.200f
+                        b = 107.0f / 255.0f;  // â‰ˆ0.420f
+                        break;
+                    /*case BLUE:   r = 0.220f; g = 0.906f; b = 0.890f; break;
                     case RED:    r = 0.557f; g = 0.000f; b = 0.000f; break;
                     case PURPLE: r = 0.506f; g = 0.000f; b = 0.800f; break;
-                    case GREEN:  r = 0.000f; g = 1.000f; b = 0.000f; break;
+                    case GREEN:  r = 0.500f; g = 1.000f; b = 0.500f; break;
                     case YELLOW: r = 1.000f; g = 0.839f; b = 0.200f; break;
-                    case ORANGE: r = 0.980f; g = 0.325f; b = 0.024f; break;
+                    case ORANGE: r = 0.980f; g = 0.325f; b = 0.024f; break;*/
                     }
                     glColor3f(r, g, b);
                     glBegin(GL_TRIANGLE_FAN);
                     glVertex3f(ep.pos.x, ep.pos.y, ep.pos.z);
-                    for (auto& p : ep.boundary) glVertex3f(p.x, p.y, p.z);
+                    for (auto& p : ep.boundary) glVertex3f(p.x, p.y, -0.5);
                     glVertex3f(ep.boundary[0].x, ep.boundary[0].y, ep.boundary[0].z);
                     glEnd();
 
-                    // ÄÚÆ«ÒÆÌîºÚ
+                    // å†…åç§»å¡«é»‘
                     if (showOffset) {
                         std::vector<zVector> innerPts;
                         innerPts.reserve(ep.boundary.size());
@@ -359,7 +735,7 @@ namespace zSpace {
                     }
                 }
 
-                // ½ö»­ÂÖÀª»ò¼ì²âµã
+                // ä»…ç”»è½®å»“æˆ–æ£€æµ‹ç‚¹
                 if (!showOffset) {
                     glColor3f(1, 1, 1);
                     glBegin(GL_LINE_LOOP);
@@ -371,10 +747,31 @@ namespace zSpace {
             }
 
             if (showVectorTriangle) {
-                // Ö»»­Èı½ÇĞÎ£¬Ìø¹ıÆäËüËùÓĞ»æÖÆ
+                // åªç”»ä¸‰è§’å½¢ï¼Œè·³è¿‡å…¶å®ƒæ‰€æœ‰ç»˜åˆ¶
                 drawVectorTriangles();
                 return;
             }
+
+            for (const auto& ep : ellipses) {
+                glColor3f(1, 0, 0);
+                glPointSize(8.0f);
+                glBegin(GL_POINTS);
+                // ç›´æ¥æŠŠ regionCenters é‡Œçš„ç‚¹ç”»å‡ºæ¥
+                for (const auto& c : ep.regionCenters) {
+                    glVertex3f(c.x, c.y, 1);
+                }
+                glEnd();
+            }
+
+
+
+
+            drawCircles();
+
+
+
+
+
         }
     };
 
